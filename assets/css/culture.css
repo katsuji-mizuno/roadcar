@@ -1,0 +1,172 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+/*----------------------------------------------------
+second.css　のマージン調整
+----------------------------------------------------*/
+#main {
+  padding: 100px 0px;
+}
+
+.brunch {
+  padding: 0 20px;
+}
+
+.tit_wrap {
+  padding: 0 20px;
+}
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+.border-line {
+  background: -webkit-gradient(linear, left top, left bottom, from(#D1F413), to(#fff));
+  background: -o-linear-gradient(#D1F413, #fff);
+  background: linear-gradient(#D1F413, #fff);
+}
+
+/*----------------------------------------------------
+メニューの文字カラー
+----------------------------------------------------*/
+.sublink_wrap li {
+  color: #109552;
+}
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+.sec_tit h2 {
+  font-family: "Rubik";
+  font-style: italic;
+  font-size: 35px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .sec_tit h2 {
+    font-size: 60px;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+  }
+}
+.sec_tit .sub {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.11em;
+  line-height: 2;
+}
+
+/*----------------------------------------------------
+セクション下のロゴ
+----------------------------------------------------*/
+.about_logo {
+  width: 180px;
+  margin: 30px auto;
+}
+
+/*----------------------------------------------------
+ページキャッチ
+----------------------------------------------------*/
+.about_catch {
+  font-weight: bold;
+  margin: 20px 0 60px;
+}
+.about_catch p {
+  font-size: 30px;
+  line-height: 2;
+}
+.about_catch span {
+  line-height: 1.8;
+}
+.about_catch br {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .about_catch br {
+    display: none;
+  }
+}
+
+/*----------------------------------------------------
+データ  １３項目
+----------------------------------------------------*/
+.culture_list {
+  margin: 40px 0;
+}
+.culture_list ul {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .culture_list ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+.culture_list li {
+  font-size: 18px;
+  -webkit-box-shadow: 1px 1px 3px #ccc;
+          box-shadow: 1px 1px 3px #ccc;
+  margin: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .culture_list li {
+    margin: 20px 19px;
+    width: 30%;
+  }
+}
+.culture_list li h2 {
+  background: #109552;
+  color: #fff;
+  padding: 10px;
+}
+.culture_list li p {
+  font-size: 14px;
+  margin: 20px;
+  height: 80px;
+  text-align: left;
+  line-height: 1.8;
+}
+
+.culture_list_img {
+  width: 150px;
+  height: 150px;
+  margin: 20px auto 0;
+}
+/*# sourceMappingURL=culture.css.map */

@@ -1,0 +1,167 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#38B4AF, #fff);
+}
+
+
+/*----------------------------------------------------
+Insuranceのコンテンツエリア
+----------------------------------------------------*/
+
+.insu_content_area {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 20px;
+  ul{
+    @include mediaPC{
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  }
+  li {
+    background: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 0 5px 10px #ccc;
+    box-shadow: 0 5px 10px #ccc;
+    margin: 0 0 40px;
+    padding: 0 0 25px;
+    @include mediaPC{
+      width: 48%;
+    }
+  }
+  .btn_black {
+    margin: 40px 0 0;
+  }
+}
+
+
+
+
+.insu_text {
+  padding: 20px 60px;
+  height: 240px;
+  @include mediaSP{
+    padding: 20px;
+  }
+}
+
+.insu_tit {
+  color: #38B4AF;
+  font-size: 25px;
+  margin: 20px 0;
+  border-bottom: 1px solid #CBCBCB;
+  padding: 0 0 20px;
+
+  span{
+    display: block;
+    font-size: 14px;
+    margin: 0 0 10px;
+  }
+}
+.insu_message{
+  text-align: left;
+}
+
+
+
+
+
+/*----------------------------------------------------
+黒いボタン
+----------------------------------------------------*/
+
+a{
+  .btn_check {
+    margin: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #000000;
+    padding: 10px 60px;
+    border-radius: 5px;
+    position: relative;
+    margin: 40px 20px 20px;
+
+    @include mediaPC{
+      width: fit-content;
+      margin: 40px auto 20px;
+
+    }
+    @include trans;
+    &::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/icon_check.png);
+        width: 11px;
+        height: 11px;
+        right: 20px;
+        top: 50%;
+        margin-top: -5px;
+        background-size: contain;
+        @include trans;
+    }
+  }
+  &:hover{
+    .btn_check {
+      background: #333333;
+      &::after{
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+.insu_thum {
+  img{
+    border-radius: 10px 10px 0px 0px ;
+  }
+}
+
+@include mediaSP{
+  .btn_black {
+   display: inline-block;
+   width: 255px;
+  }
+}
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+
+.same_prev {
+  background-image: url(../images/service/samelink_volvo.jpg);
+  &::after{
+      background: #0076DB;
+  }
+}
+
+.same_next {
+  background-image: url(../images/service/samelink_upohs.jpg);
+  &::after{
+      background: #50B0FA;
+  }
+}
+
+.same_link{
+  a:hover{
+    .same_prev {
+        &::after{
+            background: #0037bc;
+        }
+    }
+    .same_next {
+        &::after{
+            background: #1979f5;
+        }
+    }
+  }
+}
+
+

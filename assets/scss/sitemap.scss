@@ -1,0 +1,93 @@
+@charset 'utf-8';
+@import 'mixin';
+
+#main{
+  @include mediaSP{
+    padding: 100px 30px 40px;
+  }
+}
+
+
+ .tit_wrap {
+   @include mediaPC{
+    margin-top: 133px;
+  }
+}
+.sitemap_area {
+  ul.map_menu{
+    @include mediaPC{
+      display: flex;
+      justify-content: space-between;
+
+    }
+  }
+  li{
+    text-align: left;
+    margin: 25px 0;
+    &.list_margin{
+      margin: 25px 0 40px ;
+    }
+    a{
+      @include trans;
+      &:hover{
+        color: #6d6d6d;
+      }
+    }
+
+  }
+
+  span{
+    font-size: 14px;
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    display: block;
+  }
+  h2{
+    font-size: 40px;
+    font-family: 'Rubik';
+    font-style: italic;
+    border-bottom: #cbcbcb solid 1px;
+    padding: 30px 0 10px;
+    span{
+      font-weight: bold;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+    }
+  }
+  h3{
+    font-family: 'Rubik';
+    font-size: 20px;
+
+    span{
+      font-weight: normal;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+
+    }
+  }
+}
+
+ul.story{
+  li{
+    position: relative;
+    padding: 0 0 0 25px;
+    margin: 5px 0;
+    &::before{
+      content: "";
+      width: 8px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      @include trans;
+    }
+    &:hover{
+      &::before{
+        width: 13px;
+        left: 5px;
+      }
+    }
+  }
+}
+
+.list_bold {
+  font-weight: bold;
+}

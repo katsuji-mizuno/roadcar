@@ -1,0 +1,1134 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+/*----------------------------------------------------
+ローディング後のフェードイン
+----------------------------------------------------*/
+
+
+/*==スタート時は要素自体を透過0===*/
+.box{
+  opacity: 0;
+}
+
+/*==その場でフェードイン==*/
+
+.fade {
+  animation-name:fadeAnime;
+  animation-duration:1.5s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes fadeAnime{
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+/*==左からフェードイン==*/
+
+.fadeIn {
+  animation-name:fadeInAnime;
+  animation-duration:1.5s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInAnime{
+  from {
+    opacity: 0;
+    transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*==右からフェードイン==*/
+.fadeInR {
+  animation-name:fadeInRAnime;
+  animation-duration:1.2s;
+  animation-fill-mode:forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInRAnime{
+  from {
+    opacity: 0;
+    transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/*==下からフェードイン==*/
+
+.fadeUp {
+animation-name:fadeUpAnime;
+animation-duration:1.5s;
+animation-fill-mode:forwards;
+opacity: 0;
+}
+
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* アニメーションスタートの遅延時間を決めるCSS*/
+
+.delay-time01{
+  animation-delay: 1.9s;
+}
+.delay-time02{
+  animation-delay: 2.0s;
+}
+.delay-time03{
+  animation-delay: 2.1s;
+}
+.delay-time04{
+  animation-delay: 2.2s;
+}
+.delay-time05{
+  animation-delay: 4.2s;
+}
+
+/*----------------------------------------------------
+siteHead  トップのみスクロール後にヘッダーに背景色付加
+----------------------------------------------------*/
+
+#siteHead {
+  background: none;
+  backdrop-filter: unset;
+
+  @include trans;
+  &.change_bg{
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+
+  }
+}
+
+.logo {
+  margin: 0 0 0 20px;
+  width: 146px;
+}
+
+
+
+/*==================================
+メインビジュアル
+===================================*/
+
+.mv {
+  max-width: 1266px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+}
+
+
+
+/*----------------------------------------------------
+タイトルの文字
+----------------------------------------------------*/
+
+section{
+  h3{
+    font-size: 85px;
+    padding:10px;
+    @include mediaSP{
+      font-size: 53px;
+    }
+  }
+}
+
+.motion-txt {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  @include mediaPC{
+    padding: 10px 60px;
+  }
+}
+.motion-txt:after {
+  content: '';
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 77%;
+  background-color: #000;
+  transform: translate3d(-150%, 0, 0) skewX(-25deg);
+}
+.js-scroll.show .motion-txt:after {
+  transition-property: transform, opacity;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translate3d(15%, 0, 0)skewX(-25deg);
+
+}
+.js-scroll.done .motion-txt:after {
+  transition-property: transform;
+  transition-duration: 0.5s;
+  transition-delay: 0s;
+  transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  transform: translate3d(150%, 0, 0)skewX(-25deg);
+}
+.motion-txt .motion-inner {
+  display: inline-block;
+  opacity: 0;
+  font-family: 'Rubik';
+  font-style: italic;
+}
+.js-scroll.done .motion-txt .motion-inner {
+  opacity: 1;
+}
+
+
+
+/*==================================
+コンテンツエリア　斜めラインの領域
+===================================*/
+.top_contents_wrap{
+  overflow-x: hidden;
+  position: relative;
+}
+
+.top_contents{
+  background-image: url(../images/recruit/content_line_pc.png);
+  background-size: 140% 110%;
+  background-position-x: center;
+  background-position-y: -65px;
+  @include mediaSP{
+    background-image: url(../images/recruit/content_line_sp.png);
+    background-size: 270% 131.8%;
+    background-position-y: -93px;
+  }
+  @include mediaLRGmin{
+    background-image: url(../images/recruit/content_line_pc.png);
+    background-size: 140% 110%;
+    background-position-x: center;
+    background-position-y: -45px;
+  }
+}
+
+/*==================================
+車のアイコン
+===================================*/
+
+
+
+.car_SP{
+  @include mediaPC{
+    display: none;
+  }
+  position: absolute;
+}
+
+.car_PC{
+  @include mediaSP{
+    display: none;
+  }
+  position: absolute;
+}
+
+/*=========車1===========*/
+
+.car_icon1 {
+  width: 140px;
+  margin: 0 auto;
+  img{
+      /* 751以上  */
+    transform: rotate(-7deg);
+
+    /* 750以下  */
+    @include mediaSP{
+    transform: rotate(0deg);
+    }
+    /* 650以上  */
+    @include media650{
+      transform: rotate(8deg);
+    }
+    /* 760以上  */
+    @include media760{
+      transform: rotate(-13deg);
+    }
+
+    /* 801以上  */
+    @include media800{
+      transform: rotate(-12deg);
+    }
+    /* 901以上  */
+    @include media900{
+      transform: rotate(-3deg);
+    }
+
+    /* 1001以上  */
+    @include mediaSMLmin{
+      transform: rotate(-4deg);
+    }
+    /* 1201以上  */
+    @include media1200{
+      transform: rotate(0deg);
+    }
+
+
+    /* 1301以上  */
+    @include mediaMIDmin{
+      transform: rotate(1deg);
+    }
+    /* 1501以上  */
+    @include mediaLRGmin{
+      transform: rotate(6deg);
+    }
+
+  }
+}
+
+.slideConts_car1{
+  transform: translate(100vw, -60px);
+  @include trans3;
+  /* 760以上  */
+  @include media760{
+    transform: translate(100vw, -60px) ;
+    }
+  /*901以上  */
+  @include media900{
+    transform: translate(100vw, -40px);
+  }
+
+  /* 1201以上  */
+  @include media1200{
+    transform: translate(100vw, -40px);
+  }
+
+  /* 1301以上  */
+  @include mediaMIDmin{
+    transform: translate(100vw, -40px);
+  }
+
+  /* 1501以上  */
+  @include mediaLRGmin{
+    transform: translate(100vw, -20px);
+  }
+
+  &.show{
+    transform: translate(70vw, 100px) !important;
+    /* 760以上  */
+    @include media760{
+      transform: translate(78vw, 44px) !important;
+    }
+    /* 901以上  */
+    @include media900{
+      transform: translate(70vw,80px) !important;
+    }
+    /* 1001以上  */
+    @include mediaSMLmin{
+      transform: translate(70vw,80px) !important;
+    }
+    /* 1201以上  */
+    @include media1200{
+      transform: translate(70vw,70px) !important;
+    }
+
+     /* 1301以上  */
+    @include mediaMIDmin{
+      transform: translate(70vw, 80px) !important;
+    }
+     /* 1501以上  */
+    @include mediaLRGmin{
+      transform: translate(66vw, 123px) !important;
+    }
+  }
+}
+
+.slideConts_car1sp{
+   /* 750以下  */
+  transform: translate(100vw, -60px);
+  @include trans3;
+  /* 650以上  */
+  @include media650{
+    transform: translate(100vw, -37px);
+  }
+  &.show{
+    transform: translate(116px, 44px) !important;
+      /* 650以上  */
+    @include media650{
+      transform: translate(50vw, 44px) !important;
+    }
+  }
+}
+
+
+
+/*=========車2===========*/
+.car_icon2 {
+  width: 140px;
+  margin: 0 auto;
+  img{
+    transform: rotate(9deg);
+    @include mediaSP{
+      transform: rotate(-35deg);
+    }
+    /* 650以上  */
+    @include media650{
+      transform: rotate(-3deg);
+    }
+    /* 760以上  */
+    @include media760{
+      transform: rotate(18deg);
+    }
+    /* 801以上  */
+    @include media800{
+      transform: rotate(12deg);
+    }
+    /* 901以上  */
+    @include media900{
+      transform: rotate(5deg);
+    }
+    /* 1001以上  */
+    @include mediaSMLmin{
+      transform: rotate(5deg);
+    }
+    /* 1201以上  */
+    @include media1200{
+      transform: rotate(0deg);
+    }
+
+    /* 1301以上  */
+    @include mediaMIDmin{
+      transform: rotate(0deg);
+    }
+    /* 1501以上  */
+    @include mediaLRGmin{
+      transform: rotate(-5deg);
+    }
+  }
+}
+
+.slideConts_car2{
+  transform: translate(100vw, 900px);
+  @include trans3;
+
+
+  /* 760以上  */
+  @include media760{
+    transform: translate(100vw, 1100px) ;
+  }
+  /* 801以上  */
+  @include media800{
+    transform: translate(100vw, 1130px);
+  }
+  /* 901以上  */
+  @include media900{
+    transform: translate(100vw, 930px);
+  }
+  /* 1001以上  */
+  @include mediaSMLmin{
+    transform: translate(100vw, 930px);
+  }
+  /* 1201以上  */
+  @include media1200{
+    transform: translate(100vw, 900px);
+  }
+  /* 1301以上  */
+  @include mediaMIDmin{
+    transform: translate(100vw, 900px);
+  }
+  /* 1501以上  */
+  @include mediaLRGmin{
+    transform: translate(100vw, 930px);
+  }
+  &.show{
+    transform: translate(1vw, 470px) !important;
+    /* 760以上  */
+    @include media760{
+      transform: translate(6vw, 641px) !important;
+    }
+    /* 801以上  */
+    @include media800{
+      transform: translate(10vw, 660px) !important;
+    }
+    /* 901以上  */
+    @include media900{
+      transform: translate(10vw, 540px) !important;
+    }
+    /* 1001以上  */
+    @include mediaSMLmin{
+      transform: translate(10vw, 540px) !important;
+    }
+    /* 1201以上  */
+    @include media1200{
+      transform: translate(10vw, 510px) !important;
+    }
+    /* 1301以上  */
+    @include mediaMIDmin{
+      transform: translate(10vw, 510px) !important;
+    }
+    /* 1501以上  */
+    @include mediaLRGmin{
+      transform: translate(10vw, 540px) !important;
+    }
+  }
+}
+
+.slideConts_car2sp{
+  /* 750以下  */
+  transform: translate(100vw, 540px) ;
+  @include trans3;
+  /* 650以上  */
+  @include media650{
+    transform: translate(100vw, 460px);
+  }
+  &.show{
+    /* 750以下  */
+    transform: translate(332px, 575px) !important;
+    /* 650以上  */
+    @include media650{
+      transform: translate(6vw, 308px) !important;
+    }
+  }
+}
+
+/*=========車3===========*/
+.car_icon3 {
+  width: 140px;
+  margin: 0 auto;
+  img{
+    transform: rotate(-7deg);
+    /* 750以下  */
+    @include mediaSP{
+      transform: rotate(-1deg);
+    }
+
+    /* 650以上  */
+    @include media650{
+      transform: rotate(5deg);
+    }
+
+
+    /* 760以上  */
+    @include media760{
+      transform: rotate(-14deg);
+    }
+
+
+    /* 801以上  */
+    @include media800{
+      transform: rotate(-12deg);
+    }
+    /* 901以上  */
+    @include media900{
+      transform: rotate(-5deg);
+    }
+    /* 1001以上  */
+    @include mediaSMLmin{
+      transform: rotate(-5deg);
+    }
+    /* 1201以上  */
+    @include media1200{
+      transform: rotate(-5deg);
+    }
+    /* 1301以上  */
+    @include mediaMIDmin{
+      transform: rotate(2deg);
+    }
+      /* 1501以上  */
+    @include mediaLRGmin{
+      transform: rotate(5deg);
+    }
+  }
+}
+
+.slideConts_car3{
+  /* 750以下*/
+  transform: translate(100vw, 900px);
+  @include trans3;
+
+  /* 760以上  */
+  @include media760{
+    transform: translate(100vw, 1100px) ;
+  }
+  /* 801以上  */
+  @include media800{
+    transform: translate(100vw, 1120px);
+  }
+  /* 901以上  */
+  @include media900{
+    transform: translate(100vw, 930px);
+  }
+  /* 1001以上  */
+  @include mediaSMLmin{
+    transform: translate(100vw, 930px);
+  }
+  /* 1201以上  */
+  @include media1200{
+    transform: translate(100vw, 900px);
+  }
+  /* 1301以上  */
+  @include mediaMIDmin{
+    transform: translate(100vw, 900px);
+  }
+  /* 1501以上  */
+  @include mediaLRGmin{
+    transform: translate(100vw, 965px);
+  }
+  &.show{
+    /* 751~1300  */
+    transform: translate(370px, 1115px) !important;
+    /* 760以上  */
+    @include media760{
+      transform: translate(7vw, 1560px) !important;
+    }
+    /* 801以上  */
+    @include media800{
+      transform: translate(12vw, 1550px)!important;
+    }
+    /* 901以上  */
+    @include media900{
+      transform: translate(12vw, 1330px)!important;
+    }
+    /* 1001以上  */
+    @include mediaSMLmin{
+      transform: translate(12vw, 1330px)!important;
+    }
+    /* 1201以上  */
+    @include media1200{
+      transform: translate(60vw, 1070px) !important;
+    }
+    /* 1301以上  */
+    @include mediaMIDmin{
+      transform: translate(60vw, 1070px) !important;
+    }
+    /* 1501以上  */
+    @include mediaLRGmin{
+      transform: translate(60vw, 1140px) !important;
+    }
+  }
+}
+
+.slideConts_car3sp{
+  /* 750以下  */
+  transform: translate(100vw, 1800px);
+  @include trans3;
+  /* 650以上  */
+  @include media650{
+    transform: translate(100vw, 2020px) ;
+  }
+
+  &.show{
+    /* 750以下  */
+    transform: translate(130px, 1900px) !important;
+    /* 650以上  */
+    @include media650{
+      transform: translate(76vw, 2070px) !important;
+    }
+  }
+}
+
+
+
+/*==================================
+キャッチ
+===================================*/
+
+.recruit_catch {
+  padding: 150px 0 0;
+  @include mediaSP{
+    padding: 170px 0 60px;
+  }
+  span{
+    display: block;
+    font-family: 'Zen Kaku Gothic New';
+    &.catch_1{letter-spacing: 16px;}
+    &.catch_2{letter-spacing: 0px;}
+    &.catch_3{letter-spacing: 16px;}
+
+  }
+}
+
+
+.recruit_catch_sub {
+  line-height: 3;
+  font-size: 18px;
+}
+
+
+
+
+
+/*==================================
+DATA
+===================================*/
+
+.recruit_data {
+  margin: 80px 0;
+  padding: 0 30px;
+  height: 550px;
+  @include media900max{
+    height: 1140px;
+  }
+  ul{
+    max-width: 1100px;
+    margin: 0 auto;
+
+    @include media1200{
+      width: 1100px;
+    }
+
+    @include media900{
+      display: flex;
+      justify-content: space-between;
+    }
+    @include mediaPC{
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+  li{
+    background: #fff;
+    border: 1px solid #000;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #ccc;
+    margin: 0 10px;
+    @include media1200{
+      width: 24%;
+      padding: 40px;
+
+    }
+    @include media1200max{
+      margin: 20px 10px;
+      padding: 40px 30px;
+    }
+    @include mediaSP{
+      margin: 20px 0px;
+    }
+  }
+}
+
+
+.recruit_catch_sub {
+  line-height: 3;
+  font-size: 18px;
+  @include media1200max{
+    margin: 0 auto;
+  }
+  @include media1200{
+    br.only_sp{
+      display: none;
+    }
+  }
+}
+
+.data_tag {
+  background: #109552;
+  color: #fff;
+  width: fit-content;
+  margin: 0px auto;
+  padding: 1px 15px;
+  border-radius: 20px;
+}
+.data_q {
+  margin: 10px;
+}
+
+.data_tit {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 30px;
+  @include mediaSP{
+    letter-spacing: 1px;
+  }
+}
+
+/*==================================
+Story
+===================================*/
+.story_catch {
+  margin: 0px 0 100px 0;
+  @include mediaSP{
+    margin: 0px auto 100px;
+    max-width: 255px;
+  }
+}
+
+.story_catch1 {
+  @include mediaPC{
+    width: 263px;
+  }
+  margin: 0px auto 30px;
+}
+.story_catch2{
+  max-width: 615px;
+  margin: 0 auto;
+  @include mediaPC{
+    display: flex;
+    align-items: center;
+
+  }
+}
+
+.story_catch2_l{
+  background: #000;
+  border-radius: 5px;
+  @include mediaSP{
+    margin: 0 0 10px;
+  }
+}
+.story_catch2_r {
+  margin: 0 0 0 10px;
+  @include mediaSP{
+    margin: 0;
+  }
+}
+
+/*==================================
+共通部分
+===================================*/
+.top_content_wrap {
+  max-width: 1140px;
+  padding: 180px 20px;
+  margin: 0 auto;
+  &.story{
+    padding: 0px 20px;
+  }
+}
+
+.top_content_tit{
+  font-size: 85px;
+  font-family: ''Zen Kaku Gothic New'';
+  z-index: 1;
+  position: relative;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  @include mediaSP{
+    font-size: 60px;
+  }
+
+  &.about{
+    @include mediaPC{
+      margin: 0;
+    }
+  }
+  &.service{
+    position: relative;
+  }
+
+
+  span.sub{
+    font-size: 14px;
+    display: block;
+    font-family: 'Zen Kaku Gothic New';
+    font-weight: 900;
+  }
+}
+
+
+a{
+  .btn_check {
+    font-size: 16px;
+    color: #fff;
+    background: #000000;
+    border-radius: 5px;
+    position: relative;
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+
+    @include trans;
+    &::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 6px solid #fff;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      right: 20px;
+      top: 20px;
+        @include trans;
+    }
+    @include mediaSP{
+      width: 100%;
+    }
+  }
+  &:hover{
+    .btn_check {
+      background: #fff;
+      color: #000;
+
+      &::after{
+        transform: scale(1.2);
+        border-left: 6px solid #000;
+        border-top: 6px solid transparent;
+        border-bottom: 6px solid transparent;
+        right: 30px;
+      }
+    }
+  }
+}
+
+/*==================================
+RECRUITMENT
+===================================*/
+.top_content_wrap {
+  &.rec{
+    padding: 140px 0px;
+    @include mediaSP{
+      padding: 220px 30px 0;
+      margin: 0 0 120px;
+    }
+    @include mediaPC{
+      br{
+        display: none;
+      }
+    }
+  }
+}
+
+.rec_list_tit {
+
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  @include mediaPC{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    br{
+      display: none;
+    }
+  }
+}
+
+
+.rec_category {
+  color: #fff;
+  text-align: left;
+  span{
+    border-radius: 20px;
+    padding: 0px 10px;
+    font-size: 12px;
+    font-weight: bold;
+    &.volvo{background: #0076DB;}
+    &.upohs{background: #50B0FA;}
+  }
+}
+
+
+  ul.category_wrap{
+    max-width: 740px;
+    margin: 0 auto;
+    height: 380px;
+    padding: 0 0 10px;
+    @include mediaSP{
+      height: auto;
+    }
+  }
+  li.category_one{
+    border-bottom: 1px solid #CBCBCB;
+    position: relative;
+    padding: 20px 0;
+    @include mediaSP{
+      padding: 30px 0;
+    }
+
+    .rec_topic{
+      position: relative;
+      a{
+        display: flex;
+        align-items: center;
+        @include trans;
+      }
+      &::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/top/news_arr.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        width: 60px;
+        height: 4px;
+        right: -10px;
+        top: 50%;
+        @include trans;
+        @include mediaSP{
+          background-image: url(../images/top/news_arr_sp.png);
+          width: 40px;
+          top: 30px;
+          right: 0px;
+          height: 10px;
+        }
+      }
+      &:hover{
+        &::after{
+          right: 0px;
+        }
+      }
+    }
+  }
+
+
+
+/*----------------------------------------------------
+左右からフェードイン
+----------------------------------------------------*/
+.slideContsL,
+.slideContsR,
+.slideContsBottom,
+.slideContsHead
+ {
+  @include trans1;
+  opacity: 0;
+  &.show{
+    opacity: 1;
+  }
+}
+
+.slideContsL{
+  transform: translate(-400px, 0);
+}
+.slideContsR {
+  transform: translate(400px, 0);
+}
+.slideContsBottom {
+  transform: translate(0px, 100px);
+}
+.slideContsHead {
+  transform: translate(0px, -70px);
+}
+
+.slideContsL.show {
+  transform: translate(0, 0) !important;
+}
+
+.slideContsR.show {
+  transform: translate(0, 0) !important;
+}
+
+.slideContsBottom.show {
+  transform: translate(0, 0) !important;
+}
+
+.slideContsHead.show {
+  transform: translate(0, 0px) !important;
+}
+
+
+
+
+
+/*====================================================================
+slick
+====================================================================*/
+.slider {/*横幅94%で左右に余白を持たせて中央寄せ*/
+  margin:0 auto;
+  position: relative;
+  img {
+  width:100%;/*スライダー内の画像を横幅100%に*/
+  height:auto;
+  }
+  /*戻る、次へ矢印の位置*/
+
+  .slick-prev,
+  .slick-next {
+    transform: none;
+    position: absolute;
+    position: absolute;
+    bottom: -100px;
+    top: unset;
+    width: 65px;
+    height: 65px;
+  }
+
+  .slick-prev{
+    left:  calc(50% - 75px);;
+    @include mediaSP{
+      left: calc(50% - 110px);
+    }
+  }
+
+  .slick-next{
+    right:  calc(50% - 75px);;
+    @include mediaSP{
+      right: calc(50% - 35px);
+    }
+  }
+
+  .slick-next:before,
+  .slick-prev:before {
+    content: '';
+  }
+
+  .slick-prev_inner,
+  .slick-next_inner {
+    position: relative;
+  }
+
+  .slick-prev_inner::before,
+  .slick-next_inner::before {
+    position: absolute;
+    content: "";
+    background-size: contain;
+    width:65px ;
+    height:65px ;
+  }
+
+  .slick-prev_inner::before {
+    background-image: url(../images/recruit/slick_prev.png);
+  }
+  .slick-next_inner::before {
+    background-image: url(../images/recruit/slick_next.png);
+  }
+
+
+
+  .slick-list {
+    @include mediaPC{
+    margin-left: calc((100vw - 1140px) / 2);
+  }
+}
+
+
+
+
+}
+
+
+.slick,.slick-center{
+  img{
+    transform: scale(1);
+    @include trans;
+    &:hover{
+      transform: scale(1);
+    }
+  }
+}
+
+
+.entry_area {
+    border-bottom: 3px solid #fff;
+}

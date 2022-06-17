@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+.border-line {
+  background: -webkit-gradient(linear, left top, left bottom, from(#FF7BBD), to(#fff));
+  background: -o-linear-gradient(#FF7BBD, #fff);
+  background: linear-gradient(#FF7BBD, #fff);
+}
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+.same_prev {
+  background-image: url(../images/csr/samelink_about.jpg);
+  background-position: center center;
+}
+.same_prev::after {
+  background: #FF8E2E;
+}
+
+.same_next {
+  background-image: url(../images/csr/samelink_company.jpg);
+  background-position: center center;
+}
+.same_next::after {
+  background: #FF7171;
+}
+
+.same_link a:hover .same_prev::after {
+  background: #b15505;
+}
+.same_link a:hover .same_next::after {
+  background: #a03d6e;
+}
+
+.sublink_wrap li {
+  color: #FF8E2E;
+}
+/*# sourceMappingURL=csr.css.map */

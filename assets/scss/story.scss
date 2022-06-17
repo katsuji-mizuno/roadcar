@@ -1,0 +1,316 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#D1F413, #fff);
+}
+
+/*----------------------------------------------------
+メニューの文字カラー
+----------------------------------------------------*/
+.sublink_wrap li {
+  color: #109552;
+}
+
+
+
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+
+.sec_tit {
+  h2 {
+    font-family: 'Rubik';
+    font-style: italic;
+    @include setFont( $sz:35px , $ls:0.04em , $lh:1.4 );
+    @include mediaPC {
+      @include setFont( $sz:60px , $ls:0.04em , $lh:1.25 );
+    }
+  }
+  .sub {
+    font-weight: bold;
+    @include setFont( $sz:14px , $ls:0.11em , $lh:2 );
+  }
+}
+
+/*----------------------------------------------------
+セクション下のロゴ
+----------------------------------------------------*/
+
+.about_logo {
+  width: 180px;
+  margin: 30px auto;
+}
+
+
+
+/*----------------------------------------------------
+メイン画像
+----------------------------------------------------*/
+
+.content {
+  padding: 0 10px 30px;
+  @include mediaSP{
+    padding: 0 20px 30px;
+  }
+}
+
+.story_img {
+  @include mediaSP{
+    margin: 60px 0 0;
+  }
+}
+
+.story_catch {
+  font-size: 40px;
+  font-weight: bold;
+  margin: 60px 0 100px;
+  line-height: 1.8;
+  position: relative;
+  &::after{
+    content: "";
+    position: absolute;
+    width: 2px;
+    height: 30px;
+    background: #000;
+    left: 50%;
+    bottom: -40px;
+  }
+  @include mediaSP{
+    font-size: 30px;
+    margin: 20px 0 70px;
+  }
+}
+
+
+/*----------------------------------------------------
+写真とテキストのリスト
+----------------------------------------------------*/
+
+.story_area {
+  margin: 0 auto 50px;
+  padding: 0 30px;
+
+  @include mediaPC {
+    padding: 0 20px;
+    margin: 50px auto 140px;
+  }
+
+  li {
+    background-color: #fff;
+    box-shadow: 0px 4px 5px #DDDDDD;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    .text{
+      @include mediaSP{
+        margin: 30px 0;
+      }
+    }
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    @include mediaPC {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .thum {
+        width: 40.363%;
+      }
+      .text {
+        width: 50.909%;
+      }
+
+      &.img_right {
+        .thum { order: 2;}
+        .text { order: 1;}
+      }
+    }
+    @include mediaMIDmin {
+      .thum {
+        width: 400px;
+      }
+      .text {
+        width: 600px;
+      }
+    }
+  }
+
+  .tit {
+    margin: 0 0 25px;
+    text-align: left;
+    font-weight: bold;
+    color: #109552;
+    font-size: 30px;
+    line-height: 1.7;
+    @include mediaSP{
+      font-size: 21px;
+    }
+  }
+
+  .message {
+    p {
+      text-align: left;
+      line-height: 2;
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------
+CAREER PATH
+----------------------------------------------------*/
+
+
+.career_list{
+  max-width: 700px;
+  margin: 0 auto 140px;
+  padding: 0 30px;
+  @include mediaSP{
+    margin: 0 auto 60px;
+  }
+  li{
+    box-shadow: 1px 1px 10px #ccc;
+    border-radius: 10px;
+    background: #fff;
+    margin: 40px 0;
+    background: #109552;
+    border: 2px solid #109552;
+    position: relative;
+    @include mediaPC{
+      margin: 60px 0;
+      display: flex;
+      align-items: center;
+    }
+    p{
+      font-size: 14px;
+      color: #fff;
+      font-weight: bold;
+      padding:0 20px;
+      font-size: 30px;
+      @include mediaPC{
+        width: 23%;
+      }
+    }
+    span{
+      font-size: 14px;
+      padding: 20px;
+      text-align: left;
+      background: #fff;
+      min-height: 30px;
+      display: flex;
+      align-items: center;
+      line-height: 1.7;
+      border-radius: 0px 0px 8px 8px;
+
+      @include mediaPC{
+        padding: 40px;
+        width: 75%;
+        border-radius: 0 8px 8px 0;
+      }
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      border-top: 12px solid #000;
+      border-right: 12px solid transparent;
+      border-bottom: 0px solid transparent;
+      border-left: 12px solid transparent;
+      left: 50%;
+      margin-left: -12px;
+      bottom: -30px;
+      @include mediaPC{
+        bottom: -38px;
+      }
+    }
+    &:last-child{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+タイムスケジュール
+----------------------------------------------------*/
+
+.scgedule{
+  max-width: 900px;
+  margin: 40px auto;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 1px 10px #ccc;
+  @include mediaSP{
+    margin: 30px;
+  }
+  ul{
+    padding: 20px 80px;
+    @include mediaSP{
+      padding: 20px;
+    }
+  }
+  li{
+    text-align: left;
+    border-bottom: 1px #cbcbcb dashed;
+    padding: 40px 0;
+    &:last-child{
+      border-bottom:none;
+    }
+    &:first-child{
+      @include mediaSP{
+        padding: 20px 0 40px;
+      }
+    }
+  }
+  p{
+    background: #109552;
+    color: #fff;
+    border-radius: 30px;
+    display: block;
+    width: fit-content;
+    padding: 2px 20px;
+  }
+  h3{
+    color: #109552;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+  }
+
+}
+
+
+
+/*----------------------------------------------------
+OTHER STORY
+----------------------------------------------------*/
+.other_story_wrap{
+  .sec_tit{
+    margin: 100px 0 30px;
+    @include mediaSP{
+      margin: 60px 0 0px;
+    }
+  }
+}
+
+.other_link {
+  @include mediaPC{
+    display: flex;
+  }
+  div{
+    margin: 10px 0 0;
+    @include trans;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}

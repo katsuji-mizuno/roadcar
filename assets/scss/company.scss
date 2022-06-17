@@ -1,0 +1,301 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#FF7171, #fff);
+}
+
+
+
+
+
+.content {
+  max-width: 960px;
+  padding: 30px;
+  margin: 0 auto;
+  @include mediaSP{
+    padding: 0 20px;
+  }
+}
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+
+.sec_tit {
+
+  h2 {
+    font-family: 'Rubik';
+    font-style: italic;
+    @include setFont( $sz:35px , $ls:0.04em , $lh:1.4 );
+    @include mediaPC {
+      @include setFont( $sz:60px , $ls:0.04em , $lh:1.25 );
+    }
+  }
+  .sub {
+    font-weight: bold;
+    @include setFont( $sz:14px , $ls:0.11em , $lh:2 );
+  }
+  @include mediaSP{
+    text-align: left;
+  }
+}
+
+/*----------------------------------------------------
+セクション下のロゴ
+----------------------------------------------------*/
+.about_logo {
+  width: 180px;
+  margin: 30px auto;
+}
+
+/*----------------------------------------------------
+ページキャッチ
+----------------------------------------------------*/
+.com_catch {
+  font-weight: bold;
+  margin: 20px 0 60px;
+  @include mediaSP{
+    margin: 0px 0 60px;
+  }
+  p{
+      font-size: 30px;
+      line-height: 1.6;
+      margin: 0 0 20px;
+      @include mediaSP{
+        br{
+          display: none;
+        }
+        margin: 0 0 25px 0;
+      }
+  }
+}
+
+/*----------------------------------------------------
+会社概要
+----------------------------------------------------*/
+.com_outline {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 5px 10px #ccc;
+  padding: 60px;
+  margin: 0 0 120px;
+  @include mediaSP{
+    padding: 30px;
+    margin: 25px 0 60px;
+
+  }
+  li{
+    text-align: left;
+    @include mediaPC{
+      display: flex;
+      justify-content: space-between;
+    }
+    @include mediaSP{
+      border-bottom: dashed 1px #ccc;
+
+    }
+    p{
+      font-weight: bold;
+      padding: 20px 0 10px;
+      font-size: 18px;
+      @include mediaPC{
+        border-bottom: dashed 1px #ccc;
+        width: 15%;
+        padding: 20px 0;
+
+      }
+
+    }
+    span{
+      padding: 20px 0;
+      @include mediaPC{
+        width: 83%;
+        border-bottom: dashed 1px #ccc;
+      }
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+関連企業
+----------------------------------------------------*/
+.com_relate {
+  margin: 0 0 120px;
+  @include mediaSP{
+    margin: 0 0 60px;
+  }
+  h3{
+    color: #FF7171;
+    font-size: 25px;
+    border-bottom: solid 1px #ccc;
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+    @include mediaSP{
+      font-size: 22px;
+    }
+  }
+  ul{
+
+    @include mediaPC{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  }
+  p {
+    margin-bottom: 40px;
+    @include mediaPC {
+      height: 75px;
+    }
+    @include mediaSP{
+      letter-spacing: 0;
+    }
+  }
+
+  li {
+    text-align: left;
+    background: #fff;
+    border-radius: 10px;
+    -webkit-box-shadow: 1px 5px 10px #ccc;
+    box-shadow: 1px 5px 10px #ccc;
+    margin: 20px 0 0px;
+    text-align: center;
+    padding: 25px 15px;
+    @include mediaPC{
+      width: 39%;
+      margin: 40px 0 0px;
+      padding: 40px;
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------
+沿革
+----------------------------------------------------*/
+.com_history {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 1px 5px 10px #ccc;
+  padding: 60px;
+  margin: 0 0 120px;
+  @include mediaSP{
+    padding: 30px;
+    margin: 25px 0 60px;
+  }
+  li{
+    text-align: left;
+    @include mediaPC{
+      display: flex;
+      justify-content: space-between;
+    }
+    @include mediaSP{
+      text-align: left;
+      border-bottom: 1px dashed #ccc;
+      padding: 0 0 10px;
+    }
+    p{
+      padding: 10px 0;
+      font-weight: bold;
+      font-size: 18px;
+      @include mediaPC{
+        width: 15%;
+      }
+    }
+    span{
+      @include mediaPC{
+        width: 83%;
+
+      }
+      padding: 10px 0;
+    }
+  }
+}
+/*----------------------------------------------------
+黒いボタン
+----------------------------------------------------*/
+
+a{
+  .btn_check {
+    margin: 50px;
+    font-size: 16px;
+    color: #fff;
+    background: #000000;
+    padding: 10px 60px;
+    border-radius: 5px;
+    position: relative;
+    margin: 40px auto 0px;
+    @include mediaPC{
+      width: fit-content;
+      margin: 40px auto 0px;
+    }
+    @include trans;
+    &::after{
+        content: "";
+        position: absolute;
+        background-image: url(../images/icon_check.png);
+        width: 11px;
+        height: 11px;
+        right: 20px;
+        top: 50%;
+        margin-top: -5px;
+        background-size: contain;
+        @include trans;
+    }
+  }
+  &:hover{
+    .btn_check {
+      background: #333333;
+      &::after{
+        transform: scale(1.2);
+      }
+    }
+  }
+}
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+.same_prev {
+  background-image: url(../images/about/samelink_company.jpg);
+  background-position: center;
+  &::after{
+      background: #FF8E2E;
+  }
+}
+
+.same_next {
+  background-image: url(../images/about/samelink_csr.jpg);
+  background-position: center;
+  &::after{
+      background: #FF7171;
+  }
+}
+
+.same_link{
+  a:hover{
+    .same_prev {
+        &::after{
+            background: #b6651f;
+        }
+    }
+    .same_next {
+        &::after{
+            background: #a03d6e;
+        }
+    }
+  }
+}
+
+.sublink_wrap li {
+  color: #FF7171;
+}
+
+

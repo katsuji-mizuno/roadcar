@@ -1,0 +1,502 @@
+
+/*----------------------------------------------------
+siteHead
+----------------------------------------------------*/
+
+#siteHead {
+  width: 100%;
+  height: auto;
+  background: rgba(255, 255, 255, 0.7);
+  z-index: 10;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: fixed;
+  height: 60px;
+  top: 0;
+  align-items: center;
+  backdrop-filter: blur(12px);
+  @include trans;
+  @include mediaPC{
+    height: 80px;
+  }
+  &.open{
+    background: rgba(255, 255, 255, 1);
+  }
+
+  &.change_bg{
+    background: rgba(255, 255, 255, 0.7);
+  }
+}
+
+
+.logo {
+  margin: 0 0 0 20px;
+  width: 146px;
+}
+
+
+
+
+/*----------------------------------------------------
+ハンバーガーメニュー
+----------------------------------------------------*/
+
+.menu {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  z-index: 99;
+  cursor: pointer;
+  width: 80px;
+  height: 80px;
+  @include mediaSMLmax{
+    top: -5px;
+    right: 0;
+  }
+  @include trans;
+  span{
+    display: block;
+    position: absolute;
+    background: #3E3E3E;
+    width: 30px;
+    height: 2px;
+    right: 20px;
+    opacity:1;
+    transform: rotate(-20deg);
+    @include trans;
+    &:nth-child(1) { top: 27px;}
+    &:nth-child(2) { top: 38px;}
+    &:nth-child(3) { top: 49px;}
+  }
+
+  &.open span{
+    &:nth-child(1){  top: 38px; transform: rotate(-45deg); }
+    &:nth-child(2){ display: none; }
+    &:nth-child(3){  top: 38px; transform: rotate(45deg); }
+  }
+
+  &:hover{
+    @include mediaSMLmin{
+      span{
+        &:nth-child(1) { top: 30px;}
+        &:nth-child(2) { top: 38px;}
+        &:nth-child(3) { top: 46px;}
+      }
+      &.open span{
+        &:nth-child(1){  top: 38px; transform: rotate(-35deg); }
+        &:nth-child(2){ display: none; }
+        &:nth-child(3){  top: 38px; transform: rotate(35deg); }
+      }
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------
+ハンバーガーメニューの内部
+----------------------------------------------------*/
+
+#gNav {
+    position: absolute;
+    top: -400vh;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:#F4F4F4;;
+    z-index: 2;
+    @include mediaSMLmax{
+      top: -600vh;
+    }
+    @include trans1;
+    &.open {
+      top: 0px;
+      height: 100vh;
+      overflow: auto;
+    }
+  }
+
+  .gNav_inner{
+    display: flex;
+    justify-content: space-between;
+    height: 100vh;
+  }
+
+  .g_logo {
+    margin: 20px 0 0 20px;
+    width: 146px;
+
+}
+
+.g_logo_sp {
+  position: absolute;
+  top: 0;
+  margin: 20px 0 0 20px;
+  width: 146px;
+  @include mediaMIDmax{
+    display: none;
+  }
+}
+
+.g_img_wrap{
+  display: flex;
+  height: calc(100% - 50px);
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin: 0px 0 50px;
+}
+.g_img {
+  padding: 0 80px;
+}
+
+.gNav_left {
+  background: #fff;
+  width: 50%;
+  height: 100%;
+  @include mediaMIDmax{
+    display: none;
+  }
+}
+
+.gNav_right_wrap{
+  display: flex;
+  align-items: center;
+  height: 100%;
+  background: #D1F413;
+  @include mediaMIDmin{
+    width: 50%;
+
+  }
+
+}
+
+.gNav_right{
+
+  text-align: left;
+
+  ul.main{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0px 30px 30px 30px;
+    margin: 0 100px;
+    @include mediaMIDmax{
+      margin: 0 0 0 20px;
+      justify-content: space-between;
+    }
+    li{
+      width: 46%;
+      margin: 20px 0;
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        border-top: 1px solid #000;
+        width: 20px;
+        left: -30px;
+        top: 12px;
+        @include trans;
+      }
+      &:hover{
+        &::before{
+          width: 30px;
+          left: -40px;
+        }
+      }
+    }
+    a{
+      font-size: 22px;
+      font-family: 'Rubik';
+      font-style: italic;
+
+      span{
+        font-size: 11px;
+        display: block;
+        font-family: 'Zen Kaku Gothic New';
+      }
+    }
+  }
+
+  ul.sub{
+    margin: 0 100px;
+    padding: 0px 0 30px ;
+
+    @include mediaMIDmin{
+      display: flex;
+      padding: 30px 0px;
+
+    }
+    @include mediaMIDmax{
+      margin: 0 0 0 20px;
+      justify-content: space-between;
+    }
+    li{
+      margin: 10px 0;
+      position: relative;
+      @include mediaMIDmin{
+        margin: 0 30px 0 0;
+
+        &::after{
+          content: "";
+          height: 10px;
+          width: 1px;
+          background: #000;
+          position: absolute;
+          top: 7px;
+          right: -15px;
+        }
+        &:last-child{
+          &::after{
+            display: none;
+          }
+        }
+      }
+    }
+    a{
+      font-size: 11px;
+      font-weight: bold;
+      position: relative;
+      &::after{
+        content: "";
+        width: 0%;
+        background: #000;
+        height: 1px;
+        position: absolute;
+        bottom: -2px;
+        left: 0px;
+        @include trans;
+      }
+      &:hover{
+        &::after{
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+
+
+.gNav_sns {
+  display: flex;
+  border-top: solid 1px #fff;
+  margin: 0px 100px;
+  padding: 40px 0 0;
+  @include mediaMIDmax{
+    margin: 0 20px;
+  }
+}
+
+
+.gNav_insta{
+  padding: 0 0 0 35px;
+  position: relative;
+  &::before{
+    content: "";
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-size: contain;
+    left: 0px;
+    @include trans;
+  }
+  &:hover{
+    &::before{
+      transform: scale(1.2);
+    }
+  }
+}
+
+.gNav_insta{
+  &::before{
+  background-image: url(../images/icon_insta_bk.png);
+  }
+}
+
+.gNav_tk {
+  width: 120px;
+  margin: 0 0 0 30px;
+  @include trans;
+  &:hover{
+    transform: scale(1.1);
+  }
+}
+
+/*----------------------------------------------------------
+アコーディオンメニュー
+----------------------------------------------------------*/
+
+  .menu_accord {
+    display: flex;
+    font-family: 'Rubik', sans-serif;
+    font-style: italic;
+    position: absolute;
+    right: 100px;
+    top: 0px;
+    @include mediaMIDmax{
+      display: none;
+    }
+  }
+
+  .menu_accord input {
+    display: none; /*チェックボックスを隠す*/
+  }
+
+  /*バー部分*/
+  .menu_accord label {
+    cursor: pointer;
+    text-align: center;
+    position: relative;
+    display: block;
+    @include rubik;
+  }
+
+  /*開いたときに表示される部分*/
+  .menu_accord li {
+    height: 0;
+    text-align: center;
+
+    overflow-y: hidden;
+    transition: padding-bottom 0.5s, padding-top 0.5s; /*閉じるときのアニメーション*/
+    -webkit-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -moz-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -ms-transition: padding-bottom 0.5s, padding-top 0.5s;
+    -o-transition: padding-bottom 0.5s, padding-top 0.5s;
+  }
+  #menu_accord_bar01:checked ~ #links01 li,
+  #menu_accord_bar02:checked ~ #links02 li,
+  #menu_accord_bar03:checked ~ #links03 li,
+  #menu_accord_bar04:checked ~ #links04 li,
+  #menu_accord_bar05:checked ~ #links05 li
+
+  {
+    height: auto; /*開いたときに表示されるliの高さ*/
+    opacity: 1;
+    padding: 15px;
+  }
+   /*開いたときの下の余白*/
+  #menu_accord_bar01:checked ~ #links01 li:last-child,
+  #menu_accord_bar02:checked ~ #links02 li:last-child,
+  #menu_accord_bar03:checked ~ #links03 li:last-child,
+  #menu_accord_bar04:checked ~ #links04 li:last-child,
+  #menu_accord_bar05:checked ~ #links05 li:last-child {
+    border-bottom: none;
+  }
+
+  .menu_accord_block {
+    margin: 30px 10px;
+    text-align: left;
+    font-size: 15px;
+    border-radius: 10px;
+    width: 145px;
+    letter-spacing: 0;
+    @include trans;
+  }
+
+  .opened{
+    position: relative;
+    &::after{
+      position: absolute;
+      content: "";
+      border-top: 1px solid #E9F2E9;
+      width: 95%;
+      bottom: -9px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+    a {
+      @include rubik;
+    }
+  }
+
+  /*閉じた状態の矢印描画*/
+
+  .menu_accord_wrap {
+    position: relative;
+    @include trans;
+    &::before{
+      display: block;
+      content: '';
+      background-image:url(../images/icon_menuarr.png);
+      width: 12px;
+      height: 7px;
+      background-size: cover;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      margin-top: -4px;
+      @include trans;
+    }
+    &:hover{
+      color: #6d6d6d;
+      &::before{
+        transform:scale(1.2);
+      }
+    }
+  }
+
+  /*開いた状態の矢印描画*/
+  .menu_accord input[type=checkbox]:checked +
+  .menu_accord_wrap{
+    &::before{
+      transform: rotate(180deg);
+    }
+    &:hover{
+      &::before{
+        transform:scale(1.2) rotate(180deg);
+      }
+    }
+  }
+
+  .menu_single {
+    font-size: 15px;
+    display: table;
+    height: 10px;
+    a{
+      display: table-cell;
+      padding: 30px 30px 0;
+      @include rubik;
+    }
+    &:hover{
+      a{
+        color: #6d6d6d;
+      }
+    }
+  }
+
+
+  /*----------------------------------------------------------
+  アコーディオン内部
+  ----------------------------------------------------------*/
+  .menu_accord {
+    ul{
+      background: rgba(255, 255, 255, 0.7);
+      margin: 40px 0 0;
+      border-radius: 5px;
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
+    }
+    li {
+      .opened{
+        font-size: 16px;
+        a{
+          @include trans;
+        }
+        &:hover{
+          a{
+            color: #6d6d6d;
+          }
+        }
+      }
+      &:last-child{
+        .opened{
+        &::after{
+        display: none;
+        }
+      }
+    }
+    }
+  }
+
+

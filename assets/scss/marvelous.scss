@@ -1,0 +1,109 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#99ABEA, #fff);
+}
+
+
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+.same_prev {
+  background-image: url(../images/service/samelink_volvo.jpg);
+  &::after{
+      background: #0076DB;
+  }
+}
+
+.same_next {
+  background-image: url(../images/service/samelink_upohs.jpg);
+  &::after{
+      background: #50B0FA;
+  }
+}
+
+.same_link{
+  a:hover{
+    .same_prev {
+        &::after{
+            background: #0037bc;
+        }
+    }
+    .same_next {
+        &::after{
+            background: #1979f5;
+        }
+    }
+  }
+}
+
+
+
+li.img_left {
+  align-items: center;
+}
+
+
+
+
+
+/*----------------------------------------------------
+VOLVOのロゴ
+----------------------------------------------------*/
+.page_tit {
+  img{
+    width: 400px;
+    margin: 30px 0;
+    @include mediaSP{
+      width: 100%;
+    }
+  }
+}
+
+.page_tit h1 {
+  font-size: 78px;
+  @include mediaSP{
+    font-size: 46px;
+  }
+}
+
+
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+.sec_tit {
+  margin-bottom: 50px;
+  h2 {
+    font-family: 'Rubik';
+    font-style: italic;
+    @include setFont( $sz:35px , $ls:0.04em , $lh:1.4 );
+    @include mediaPC {
+      @include setFont( $sz:60px , $ls:0.04em , $lh:1.25 );
+    }
+  }
+  .sub {
+    font-weight: bold;
+    @include setFont( $sz:14px , $ls:0.11em , $lh:2 );
+  }
+
+  @include mediaPC {
+    margin-bottom: 60px;
+  }
+}
+
+
+.slick-dots li button:before {
+  top: 1px;
+}
+
+.slick-dots li button {
+  width: 21px;
+  height: 21px;
+}

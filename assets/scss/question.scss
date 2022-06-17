@@ -1,0 +1,417 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+/*----------------------------------------------------
+second.css　のマージン調整
+----------------------------------------------------*/
+
+#main {
+  padding: 100px 0px;
+}
+
+.brunch {
+  padding: 0 20px;
+}
+
+.tit_wrap {
+  padding: 0 20px;
+}
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#D1F413, #fff);
+}
+
+/*----------------------------------------------------
+メニューの文字カラー
+----------------------------------------------------*/
+.sublink_wrap li {
+  color: #109552;
+}
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+
+.sec_tit {
+  h2 {
+    font-family: 'Rubik';
+    font-style: italic;
+    @include setFont( $sz:35px , $ls:0.04em , $lh:1.4 );
+    @include mediaPC {
+      @include setFont( $sz:60px , $ls:0.04em , $lh:1.25 );
+    }
+  }
+  .sub {
+    font-weight: bold;
+    @include setFont( $sz:14px , $ls:0.11em , $lh:2 );
+  }
+}
+
+/*----------------------------------------------------
+セクション下のロゴ
+----------------------------------------------------*/
+
+.about_logo {
+  width: 180px;
+  margin: 30px auto;
+}
+
+
+/*----------------------------------------------------
+ページキャッチ
+----------------------------------------------------*/
+.about_catch {
+  font-weight: bold;
+  margin: 20px 0 60px;
+  p{
+      font-size: 30px;
+      line-height: 2;
+  }
+  span{
+    line-height: 1.8;
+  }
+  br{
+    @include mediaSP{
+      display: none;
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+ページ内リンク
+----------------------------------------------------*/
+.link_in_page {
+  text-align: left;
+  margin: 50px 0;
+  padding: 0 30px;
+  ul{
+    background: #000000;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #CBCBCB;
+    padding: 0 20px;
+    margin: 0 auto;
+    @include mediaPC{
+        display: flex;
+        width: fit-content;
+        padding: 20px 0;
+    }
+  }
+  li {
+    font-size: 14px;
+    position: relative;
+
+    @include mediaSP{
+        padding: 20px 0px;
+    }
+
+    a {
+      color: #fff;
+      font-weight: bold;
+      position: relative;
+      display: block;
+      @include trans;
+      &:hover{
+        color: #D1F413;
+      }
+      @include mediaPC{
+        padding: 10px 40px 20px;
+
+      }
+    }
+
+    &::before{
+      content: "";
+      position: absolute;
+      border-top: 8px solid #fff;
+      border-right: 8px solid transparent;
+      border-bottom: 0px solid transparent;
+      border-left: 8px solid transparent;
+
+      @include trans;
+      @include mediaPC{
+        left: 50%;
+        margin-left: -8px;
+        bottom: -2px;
+      }
+      @include mediaSP{
+        right: 0px;
+        top: 50%;
+      }
+    }
+
+    &:hover{
+      &::before{
+        border-top: 8px solid #D1F413;
+        bottom: -7px;
+      }
+    }
+
+
+    &::after{
+      content: "";
+      position: absolute;
+      background: #CBCBCB;
+      @include mediaPC{
+          width: 1px;
+          height: 100%;
+          right: 0px;
+          top: 0px;
+      }
+      @include mediaSP{
+          width: 100%;
+          height: 1px;
+          left: 0px;
+          bottom: 0;
+      }
+    }
+    &:last-child{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+/*----------------------------------------------------
+プロフィール／プライベート
+----------------------------------------------------*/
+
+.quest_profile_tit{
+  font-size: 40px;
+  font-weight: bold;
+  margin: -100px 0 0;
+  padding: 130px 0 0 0;
+  @include mediaSP{
+    font-size: 25px;
+    padding: 100px 0 0 0;
+  }
+  @include mediaPC{
+    br{
+      display: none;
+    }
+  }
+}
+
+
+#quest_profile{
+  .quest_profile_tit{
+    margin: -100px 0 0;
+    padding: 100px 0 0 0;
+  }
+}
+
+/*----------------------------------------------------
+Question  リスト
+----------------------------------------------------*/
+
+
+.quest_list {
+  margin: 40px 0;
+  padding: 0 30px;
+  ul{
+    @include mediaPC{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  li{
+    font-size: 18px;
+    box-shadow: 1px 1px 3px #ccc;
+    margin: 50px 0;
+    border-radius: 10px;
+    background: #fff;
+    position: relative;
+    @include mediaPC{
+      width: 29%;
+      margin: 20px;
+    }
+    h2{
+      color: #000;
+      padding: 30px 0 0px;
+      height: 60px;
+      line-height: 2;
+    }
+    a.modal-open{
+      &::after{
+        position: absolute;
+        content: "";
+        background-image: url(../images/question/quest_btn.png);
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+        bottom: -32px;
+        right: -8px;
+        pointer-events: none;
+        z-index: -1;
+        @include trans;
+      }
+    }
+    &:hover{
+      a{
+        &::after{
+          transform:scale(1.2);
+        }
+      }
+    }
+  }
+}
+
+.quest_list_img {
+  margin: 40px auto 0;
+  height: 160px;
+
+  /* 901以上  */
+  @include mediaSSMLmin{
+    width: 235px;
+  }
+  /* 750以下  */
+  @include mediaSP{
+    width: 235px;
+  }
+}
+
+
+
+
+/*----------------------------------------------------
+Question  モーダル
+----------------------------------------------------*/
+
+
+.quest_modal_wrap a{
+    &::before{
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    }
+
+    .quest_modal_link {
+      position: absolute;
+      right: -8px;
+      bottom: -32px;
+      width: 60px;
+      @include trans;
+    }
+
+    &:hover{
+      .quest_modal_link {
+        transform: scale(1.2);
+      }
+    }
+}
+
+.quest_modal {
+  position: relative;
+}
+
+
+
+.modal{
+  display: none;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  left: 0px;
+  z-index: 1;
+}
+
+.modal__bg{
+  background: rgba(209,244,19,0.8);
+  height: 100vh;
+  position: absolute;
+  width: 100%;
+}
+
+.modal__content{
+  background: #fff;
+  left: 50%;
+  padding: 40px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 10px;
+  box-shadow: 3px 3px 10px #aaa;
+  border: 3px solid #109552;
+  img{
+    width: 255px;
+    margin: 40px 0 20px;
+  }
+  @include mediaPC{
+    width: 500px;
+
+  }
+}
+
+.modal__content_inner {
+  position: relative;
+  p{
+    font-weight: bold;
+    font-size: 22px;
+    padding: 0px 0 40px;
+    border-bottom: 1px solid #cbcbcb;
+  }
+}
+
+
+
+.quest_modal_close_link {
+  position: absolute;
+  right: -50px;
+  bottom: -95px;
+  img{
+    width: 60px;
+    @include trans;
+  }
+  a.js-modal-close {
+    &:hover{
+      img{
+        transform:scale(1.2);
+      }
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------
+ロードカーに一言
+----------------------------------------------------*/
+.quest_word_pc {
+  display: flex;
+  margin: 60px 0;
+  padding: 0 30px;
+
+  @include mediaSP{
+    display: none;
+  }
+  li{
+    margin: 10px;
+    &.space{
+      margin: 30px 10px 10px;
+    }
+  }
+
+}
+
+.quest_word_sp {
+  padding: 40px 25px;
+  @include mediaPC{
+    display: none;
+  }
+}

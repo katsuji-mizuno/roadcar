@@ -1,0 +1,550 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+
+.contact .tit_wrap {
+  @include mediaPC{
+    margin-top: 133px;
+  }
+}
+
+.contact_wrap {
+  box-shadow: 1px 1px 10px #ccc;
+  max-width: 700px;
+  margin: 60px auto;
+  border-radius: 10px;
+  overflow: hidden;
+  @include mediaSP{
+    margin: 40px auto ;
+  }
+}
+
+.contact_inner {
+  border-top: 5px solid #D1F413;
+  @include mediaSP{
+    padding: 0 20px;
+  }
+}
+
+.contact_text {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40px 0;
+}
+
+
+
+.contact_step {
+  margin: 0 0 80px 0;
+  div{
+    font-size: 10px;
+    font-family: 'Rubik';
+    span{
+      font-size: 12px;
+    }
+  }
+  p{
+    font-size: 16px;
+  }
+  ul{
+    display: flex;
+    justify-content: center;
+  }
+  li{
+    background: #CBCBCB;
+    border-radius: 5px;
+    margin: 0 8px;
+    padding: 10px 15px;
+    font-weight: bold;
+    position: relative;
+    &.active{
+      background: #D1F413;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      border-top: solid 1px #000000;
+      border-right: solid 1px #000000;
+      width: 6px;
+      height: 6px;
+      transform: rotate(45deg);
+      top: 32px;
+      left: 89px;
+    }
+    &:last-child{
+      &::after{
+        display: none;
+      }
+    }
+  }
+}
+
+
+.contact_tel {
+  margin: 0 0 40px;
+  p{
+    font-size: 30px;
+    font-weight: bold;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 0 0 0 40px;
+    letter-spacing: 4px;
+    &::before{
+      content: "";
+      position: absolute;
+      background-image: url(../images/contact/hatena.png);
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 34px;
+      height: 33px;
+      left: 0px;
+      top: 9px;
+    }
+  }
+  span{
+    margin: 10px 0 0;
+    display: block;
+  }
+}
+.contact_tel_text {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+}
+
+
+
+.input_wrap {
+  margin: 40px auto;
+  text-align: left;
+  @include mediaPC{
+    width: 500px;
+  }
+  .required_add{
+    &::after{
+      content: "必須";
+      background: #000;
+      padding: 2px 10px;
+      border-radius: 2px;
+      color: #fff;
+      margin: 0 0 0 10px;
+    }
+  }
+  input,textarea {
+    border: none;
+    background: #F8F8F8;
+    width: calc(100% - 40px);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0 5px;
+
+  }
+  select {
+    border: none;
+    background: #F8F8F8;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0 0px;
+    cursor: pointer;
+  }
+
+}
+
+.explanation {
+  span{
+    margin: 10px 0 0 0px;
+    display: block;
+  }
+  @include mediaPC{
+    display: flex;
+    span{
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+
+/*===============================
+「内容を確認する」ボタンのデザイン調整
+================================*/
+
+.btn_confirm {
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  padding: 30px 0 100px;
+  @include mediaSP{
+    padding: 0px 0 40px;
+  }
+	input{
+    padding: 20px;
+    background: #000;
+    border-radius: 5px;
+    width: 100%;
+    border: solid 1px #000;
+    &:hover{
+      background: #fff;
+      color: #000;
+    }
+    color: #fff;
+    cursor: pointer;
+    cursor: hand;
+    @include trans;
+
+  }
+}
+
+.btn_confirm_ok{
+    position: relative;
+    margin: 0 auto;
+    @include mediaPC{
+      width: 210px;
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-left: 6px solid #fff;
+      border-top: 6px solid transparent;
+      border-bottom: 6px solid transparent;
+      right: 20px;
+      top: 26px;
+      pointer-events: none;
+      @include trans;
+    }
+    &:hover{
+      &::after{
+        right: 30px;
+        border-left: 6px solid #000;
+
+      }
+    }
+}
+
+
+.link_privacy{
+	margin: 0px;
+	@include mediaSP{
+		margin: 0 0 0 33px;
+	}
+	a{
+    color: #000;
+    &:link{
+      text-decoration: underline;
+
+    }
+  }
+}
+
+.check_wrap {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	@include mediaSP{
+    margin: -20px 0 20px;
+    justify-content: left;
+	}
+}
+
+/*----------------------------------------------------------
+フォーム チェックボックスのデザインを変える
+----------------------------------------------------------*/
+
+input[type="checkbox"] {
+	/* デフォルトcheckボックス非表示*/
+	display: none;
+  }
+  .mwform-checkbox-field-text {
+	display: inline-block;
+	position: relative;
+	padding: 0 36px 0 36px;
+  }
+  .mwform-checkbox-field-text::before,
+  .mwform-checkbox-field-text::after {
+	content: "";
+	position: absolute;
+	display: block;
+  }
+  .mwform-checkbox-field-text::before {
+    background: #f8f8f8;
+    width: 20px;
+    height: 20px;
+    top: -16px;
+    left: 0;
+    border-radius: 5px;
+    @include mediaSP{
+      top: 10px;
+    }
+  }
+  .mwform-checkbox-field-text::after {
+    width: 13px;
+    height: 20px;
+    top: -16px;
+    left: 3px;
+    opacity: 0.2;
+    background-image: url(../images/contact/check.png);
+    z-index: 1;
+    background-size: cover;
+    @include trans;
+    @include mediaSP{
+      top: 10px;
+    }
+  }
+  input[type="checkbox"]:checked + .mwform-checkbox-field-text::after {
+	/* css擬似要素 :checked が付加されているときは表示  */
+	opacity: 1;
+
+  }
+
+  .form_check{
+	label{
+	  justify-content: center;
+	  margin: 50px 0;
+	  @include mediaPC{
+		margin: 0 0 50px;
+	  }
+	}
+	span{
+    padding: 0 0 0px 28px;
+		cursor: pointer;
+		cursor: hand;
+		@include mediaSP{
+			padding: 0 0 35px;
+		}
+	}
+  .error {
+    position: absolute;
+  }
+}
+
+
+
+ .mw_wp_form_complete {
+	margin: 100px 0;
+	 p{
+		font-size: 24px;
+		font-family: "游明朝体", "Yu Mincho", YuMincho, "ヒラギノ明朝 Pro", "Hiragino Mincho Pro", "MS P明朝", "MS PMincho", serif;
+		line-height: 3;
+		letter-spacing: 6px;
+		text-align:center ;
+	}
+}
+
+
+
+
+/*----------------------------------------------------------
+フォームチェックでフォーム全体のスタイルを打ち消し
+----------------------------------------------------------*/
+
+#inquiry_check{
+	.required_add{
+		&::after{
+			display: none;
+		}
+	}
+
+	.required_no{
+		&::after{
+			display: none;
+		}
+	}
+
+	.input_wrap p, .textarea_wrap p {
+		background: #E8E8E8;
+		padding: 19px;
+		@include mediaPC{
+			width: 75%;
+		}
+	}
+
+	.check_wrap{
+		display: none;
+	}
+}
+
+/*----------------------------------------------------------
+フォームチェックのみのスタイル
+----------------------------------------------------------*/
+
+.inquiry_text{
+	text-align: center;
+	font-size: 20px;
+    font-weight: bold;
+    margin: 0 0 30px;
+}
+
+
+.contact_type{
+  @include mediaSP{
+    select{
+      width: 100%;
+    }
+  }
+}
+
+
+
+p.contact_headline {
+  color: #2FAAD0;
+  font-family: 'Kiwi Maru';
+  font-size: 20px;
+  margin: 0 0 20px;
+}
+
+
+
+
+
+/*----------------------------------------------------------
+確認画面
+----------------------------------------------------------*/
+
+.contact_confirm {
+  .contact_text {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 40px 0;
+    line-height: 2;
+  }
+  .input_wrap {
+    margin: 30px auto;
+    &.re{
+      display: none;
+    }
+    @include mediaPC{
+      display: flex;
+    }
+  }
+  .required_add
+    {
+    &::after{
+      display: none;
+    }
+  }
+  .required_wrap {
+    @include mediaPC{
+      width: 40%;
+    }
+  }
+  .form_wrap {
+    @include mediaPC{
+      width: 60%;
+    }
+  }
+  .check_wrap {
+    display: none;
+  }
+  .explanation {
+    p{
+      display: none;
+    }
+  }
+
+  .btn_confirm {
+    @include mediaPC{
+      display: flex;
+      width: 440px;
+    }
+  }
+
+
+  .btn_confirm_ok,
+  .btn_confirm_back{
+      position: relative;
+      margin: 10px auto;
+
+      &::after{
+        display: none;
+      }
+      @include mediaPC{
+        width: 210px;
+        margin: 0 auto;
+      }
+  }
+
+
+  .btn_confirm_back input {
+    padding: 20px;
+    background: #000;
+    border-radius: 5px;
+    width: 100%;
+    border: solid 1px #000;
+    color: #fff;
+    cursor: pointer;
+    cursor: hand;
+    @include trans;
+    &:hover{
+      background: #fff;
+      color: #000;
+
+    }
+
+}
+
+
+  .btn_confirm_ok input {
+    padding: 20px;
+    background: #FF8E2E;
+    border-radius: 5px;
+    border: solid 1px #FF8E2E;
+    width: 100%;
+    color: #fff;
+    cursor: pointer;
+    cursor: hand;
+    @include trans;
+    &:hover{
+      background: #fff;
+      color: #FF8E2E;
+    }
+
+  }
+
+
+}
+
+
+
+
+
+/*----------------------------------------------------------
+完了画面
+----------------------------------------------------------*/
+
+
+
+.thanks_message {
+  line-height: 2;
+  span{
+    color: #FF8E2E;
+    text-decoration: underline;
+  }
+}
+.back_top{
+  display: flex;
+  justify-content: center;
+  margin: 40px 0 60px;
+}
+.btn_check{
+  font-size: 16px;
+    color: #fff;
+    background: #000000;
+    border-radius: 5px;
+    position: relative;
+    width: 210px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #000;
+    @include trans;
+    &:hover{
+      color: #000;
+      background: #fff;
+    }
+  }
+

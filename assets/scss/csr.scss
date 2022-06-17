@@ -1,0 +1,54 @@
+@charset 'utf-8';
+@import 'mixin';
+
+
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#FF7BBD, #fff);
+}
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+
+.same_prev {
+  background-image: url(../images/csr/samelink_about.jpg);
+  background-position: center center;
+  &::after{
+      background: #FF8E2E;
+  }
+}
+
+.same_next {
+  background-image: url(../images/csr/samelink_company.jpg);
+  background-position: center center;
+  &::after{
+      background: #FF7171;
+  }
+}
+
+.same_link{
+  a:hover{
+    .same_prev {
+        &::after{
+            background: #b15505;
+        }
+    }
+    .same_next {
+        &::after{
+            background: #a03d6e;
+        }
+    }
+  }
+}
+
+
+.sublink_wrap li {
+  color: #FF8E2E;
+}
+
+

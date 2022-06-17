@@ -1,0 +1,88 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+#main {
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  #main {
+    padding: 100px 30px 40px;
+  }
+}
+
+.tit_wrap {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .tit_wrap {
+    margin-top: 133px;
+  }
+}
+
+.text_area {
+  max-width: 700px;
+  margin: 60px auto 0;
+  text-align: left;
+}
+.text_area h2 {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  line-height: 1.6;
+}
+.text_area h3 {
+  margin: 20px 0 0;
+  font-weight: normal;
+}
+.text_area p {
+  margin: 10px 0;
+  line-height: 2;
+  letter-spacing: 0px;
+}
+.text_area p.marginPlus {
+  margin: 20px 0 10px;
+}
+.text_area li {
+  margin: 10px 0;
+}
+.text_area .innerUl li {
+  margin: 0;
+}
+.text_area .innerUl.marginL li {
+  margin: 0 0 0 10px;
+}
+.text_area .innerDot li {
+  margin: 0;
+  padding: 0 0 0 10px;
+  position: relative;
+  line-height: 2;
+}
+.text_area .innerDot li::before {
+  position: absolute;
+  content: "・";
+  left: -5px;
+}
+/*# sourceMappingURL=sitepolicy.css.map */

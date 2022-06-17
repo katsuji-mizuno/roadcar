@@ -1,0 +1,937 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+グラデーションがかかったエリアの設定。※色は個別CSSで指定
+----------------------------------------------------*/
+#main{
+  padding: 100px 20px;
+  max-width: 1140px;
+  margin: 0 auto;
+  position: relative;
+  @include mediaSP{
+      padding: 100px 30px 0;
+  }
+  &::after{
+      content: "";
+      height: 100%;
+      width: 300px;
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -150px;
+      z-index: -1;
+      @include mediaSP{
+          width: 256px;
+          margin-left: -123px;
+
+      }
+  }
+  &.rec{
+    padding: 100px 0px;
+    @include mediaSP{
+      padding: 100px 0px 0px;
+    }
+  }
+}
+
+/*----------------------------------------------------
+パンクず
+----------------------------------------------------*/
+.brunch {
+    text-align: left;
+    font-size: 11px;
+    ul{
+        display: flex;
+        &.post-categories{
+          display: inline-flex;
+        }
+    }
+    li{
+        &::after{
+            content: "＞";
+            margin: 0 10px;
+        }
+        &:last-child{
+            &::after{
+                display: none;
+            }
+        }
+    }
+    @include mediaSP{
+        display: none;
+      }
+    &.rec{
+      padding: 0 20px;
+
+      @include mediaSP{
+        display: block;
+        margin: -20px 0 20px;
+        padding: 0 30px;
+      }
+    }
+
+
+}
+
+/*----------------------------------------------------
+ページタイトル・サブリンクのラップ
+----------------------------------------------------*/
+.tit_wrap{
+    display: flex;
+    flex-flow: column-reverse;
+    margin: 0 0 60px;
+    @include mediaSP{
+        flex-flow: column;
+    }
+    &.rec{
+      padding: 0 20px;
+      @include mediaSP{
+        padding: 0 30px;
+      }
+    }
+}
+
+/*----------------------------------------------------
+ページタイトル
+----------------------------------------------------*/
+.page_tit {
+    h1{
+        font-size: 94px;
+        font-family: 'Rubik';
+        font-style: italic;
+        text-align: left;
+        @include mediaSP{
+            font-size: 46px;
+        }
+    }
+    span{
+        display: block;
+        font-size: 14px;
+        font-family: 'Zen Kaku Gothic New';
+    }
+}
+
+/*----------------------------------------------------
+サブリンク
+----------------------------------------------------*/
+
+.sublink_wrap{
+  text-align: left;
+  margin: 30px 0 50px;
+  ul{
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px #CBCBCB;
+    padding: 0 20px;
+    @include mediaPC{
+        display: flex;
+        width: fit-content;
+        padding: 20px;
+    }
+  }
+  li {
+    font-size: 16px;
+    font-family: 'Rubik';
+    font-style: italic;
+    padding: 0 20px;
+    position: relative;
+
+    &.about{ color: #FF8E2E;}
+    &.company{ color: #FF7171;}
+    &.csr { color: #FF7BBD;}
+    &.volvo { color: #0076DB; }
+    &.upohs { color: #50B0FA; }
+    &.insurance { color: #38B4AF; }
+    &.marvelous { color: #99ABEA; }
+
+    @include mediaSP{
+        padding: 20px 0px;
+    }
+    span{
+      font-size: 11px;
+      font-family: 'Zen Kaku Gothic New';
+      @include mediaPC{
+          display: block;
+      }
+      @include mediaSP{
+          margin: 0 0 0 10px;
+      }
+    }
+    a {
+      color: #9B9B9B;
+      @include rubik;
+      @include trans;
+      &:hover{
+          color: #333;
+      }
+    }
+    &::after{
+      content: "";
+      position: absolute;
+      background: #CBCBCB;
+      @include mediaPC{
+          width: 1px;
+          height: 100%;
+          right: 0px;
+          top: 0px;
+      }
+      @include mediaSP{
+          width: 100%;
+          height: 1px;
+          left: 0px;
+          bottom: 0;
+      }
+    }
+    &:last-child{
+      &::after{
+        display: none;
+      }
+    }
+  }
+  &.rec{
+    @include mediaSP{
+      display: none;
+    }
+  }
+  &.foot{
+    @include mediaPC{
+      display: none;
+    }
+    margin: 20px 0;
+    ul{
+      box-shadow: 0 3px 10px rgb(0 0 0 / 25%);
+    }
+  }
+}
+
+/*----------------------------------------------------
+リクルートはフッターにサブリンクを移動
+----------------------------------------------------*/
+.sublink_foot{
+  @include mediaSP{
+    padding: 10px 30px;
+    background: #109552;
+
+  }
+}
+
+
+/*----------------------------------------------------
+ページキャッチ
+----------------------------------------------------*/
+.page_catch {
+    font-weight: bold;
+    @include mediaPC{
+        margin: 80px 0;
+    }
+    p{
+        font-size: 30px;
+        @include mediaPC{
+            br{
+                display: none;
+            }
+        }
+    }
+    span{
+        display: block;
+        font-weight: normal;
+        line-height: 2;
+        margin: 20px 0;
+    }
+}
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+.same_link {
+  @include mediaPC{
+    display: flex;
+    a{
+        width: 50%;
+    }
+  }
+}
+
+.same_text {
+  color: #fff;
+  font-size: 65px;
+  font-family: 'Rubik';
+  font-style: italic;
+  position: absolute;
+  z-index: 1;
+  @include mediaSP{
+      font-size: 40px;
+  }
+  span{
+      font-size: 14px;
+      display: block;
+      font-family: 'Zen Kaku Gothic New';
+  }
+
+  &.l{
+      right: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  &.r{
+      left: 50px;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+}
+
+.same_prev,.same_next{
+  background-size: cover;
+  height: 252px;
+  position: relative;
+  @include mediaSP{
+    height: 150px;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 20px;
+    transform: rotate(45deg) translateY(-50%);
+    z-index: 1;
+    @include trans;
+
+  }
+  &::after{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    @include trans;
+  }
+}
+
+
+.same_prev {
+  text-align: right;
+  &::before{
+    border-bottom: solid 2px #fff;
+    border-left: solid 2px #fff;
+    left: 50px;
+  }
+}
+
+.same_next {
+  text-align: left;
+  &::before{
+    border-top: solid 2px #fff;
+    border-right: solid 2px #fff;
+    right: 50px;
+  }
+}
+
+.same_link{
+  a:hover{
+    .same_prev {
+        &::before{
+            left: 80px;
+        }
+    }
+    .same_next {
+      &::before{
+          right: 80px;
+      }
+    }
+  }
+}
+
+
+
+/*----------------------------------------------------
+お問い合わせのリンク
+----------------------------------------------------*/
+
+.contact_link {
+    margin: 100px 0;
+}
+
+.contact_link_tit {
+    margin: 0 0 60px;
+    span{
+        font-size: 14px;
+        font-family: 'Zen Kaku Gothic New';
+        display: block;
+        margin: 0 0 20px;
+        font-weight: bold;
+        @include mediaSP{
+          font-size: 18px;
+        }
+    }
+    @include mediaSP{
+      margin: 0 0 40px;
+    }
+
+    p{
+      font-size: 94px;
+
+        font-family: 'Rubik';
+        font-style: italic;
+        line-height: 0.8;
+    @include mediaPC{
+            br{
+                display: none;
+            }
+        }
+    }
+}
+
+
+
+.contact_link_text {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+
+
+
+
+// 以下 岩屋追加分    //
+
+/*----------------------------------------------------
+黒ボタン
+----------------------------------------------------*/
+.btn_black {
+	@include btn( $wh:255px , $color:#000000 );
+	@include setFont( $sz:16px , $ls:0.04em , $lh:1.75 );
+  @include mediaSP {
+    /* 中真ん中の線に合わせるため */
+    position: relative;
+    display: block;
+    width: auto;
+  }
+	@include mediaPC {
+		@include btn( $wh:210px , $color:#000000 );
+	}
+
+	//右矢印付き ▶︎
+	&.arrow {
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-left: 6px solid #fff;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			@include trans1;
+		}
+
+		&:hover::after {
+			border-left: 8px solid #000000;
+			right: 30px;
+		}
+	}
+
+  //チェックマーク
+  &.check {
+    position: relative;
+    &::after {
+      @include setGiji_img( $BgUrl:('../images/icon_check.png') , $wh:11px , $ht:11px );
+      @include CENTERxTate;
+      right: 12px;
+			@include trans1;
+		}
+
+    @include mediaPC {
+      &:hover::after {
+        @include setGiji_img( $BgUrl:('../images/icon_check_black.png') , $wh:11px , $ht:11px );
+      }
+    }
+  }
+}
+
+//volvo、upohsページのmovie欄ボタン
+.movie .btn_black {
+  @include mediaPC {
+    padding: 5px 0;
+    width: 250px;
+    height: 35px;
+  }
+}
+
+//volvo、upohsページのshop欄ボタン
+.shop .btn_black {
+  @include mediaPC {
+    padding: 5px 0;
+    height: 35px;
+  }
+}
+
+//contactボタン 全ページ
+.contact_btn {
+  margin-top: 60px;
+  padding: 0 40px;
+  .btn_black {
+    font-weight: normal;
+  }
+
+  @include mediaPC {
+  margin-top: 30px;
+    .btn_black {
+      font-weight: normal;
+      height: 70px;
+      width: 350px;
+      @include setFont( $sz:22px , $ls:0.04em , $lh:2.636 );
+    }
+  }
+}
+
+
+
+
+
+
+
+
+/*----------------------------------------------------
+オレンジボタン（リクルート関連ページのフッター）
+----------------------------------------------------*/
+a.btn_orange {
+  width: 536px;
+  background:#FF4500 ;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 0 18px;
+  margin: 0 10px;
+
+  @include trans;
+  span{
+    font-size: 33px;
+  }
+  &:hover{
+    background:#fff ;
+    color: #FF4500;
+  }
+
+  @include mediaSP {
+    /* 中真ん中の線に合わせるため */
+    position: relative;
+    display: block;
+    width: auto;
+  }
+
+	//右矢印付き ▶︎
+	&.arrow {
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-left: 6px solid #fff;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			@include trans1;
+		}
+
+		&:hover::after {
+			border-left: 8px solid #FF4500;
+			right: 30px;
+		}
+    p{
+      font-size: 14px;
+
+    }
+	}
+}
+
+
+
+
+/*----------------------------------------------------
+緑ボタン（リクルート関連ページのフッター）
+----------------------------------------------------*/
+a.btn_green {
+  width: 536px;
+  background:#109552 ;
+  color: #fff;
+  display: block;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 10px 0 18px;
+  margin: 0 10px;
+  @include trans;
+  span{
+    font-size: 33px;
+  }
+  &:hover{
+    background:#fff ;
+    color: #109552;
+  }
+
+  @include mediaSP {
+    /* 中真ん中の線に合わせるため */
+    position: relative;
+    display: block;
+    width: auto;
+  }
+
+	//右矢印付き ▶︎
+	&.arrow {
+		position: relative;
+		&::after {
+			content: "";
+			position: absolute;
+			width: 0;
+			height: 0;
+			border-left: 6px solid #fff;
+			border-top: 6px solid transparent;
+			border-bottom: 6px solid transparent;
+			right: 20px;
+			top: 50%;
+			transform: translateY(-50%);
+			@include trans1;
+		}
+
+		&:hover::after {
+			border-left: 8px solid #109552;
+			right: 30px;
+		}
+    p{
+      font-size: 14px;
+
+    }
+	}
+}
+
+
+
+
+
+
+
+
+
+
+/*----------------------------------------------------
+wrap (information  ページ )
+----------------------------------------------------*/
+
+//informationページ系
+.post_content_wrap {
+  margin-bottom: 90px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+  @include mediaPC {
+    margin-bottom: 130px;
+  }
+}
+
+/*----------------------------------------------------
+wrap (ボルボ ユーボス  ページ )
+----------------------------------------------------*/
+//volvo upohs ページ
+.content_wrap_volvoUpohs {
+  margin-bottom: 60px;
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  @include mediaPC {
+    margin-bottom: 60px;
+  }
+}
+
+/*----------------------------------------------------
+shop (ボルボ ユーボス  ページ )
+----------------------------------------------------*/
+
+
+//ショップエリア
+.shop {
+
+  .lt {
+    @include mediaPC {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    @include mediaSMLmin {
+      &::after{
+        content:"";
+        display:block;
+        width: 30.909%;
+        height:0;
+      }
+    }
+  }
+
+  li {
+    background-color: #fff;
+    box-shadow: 0px 4px 5px #DDDDDD;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    padding: 25px 30px;
+    @include mediaPC {
+      width: 40%;
+    }
+    @include mediaSMLmin {
+      width: 25.909%;
+    }
+  }
+
+  .shop_tit {
+    margin-bottom: 40px;
+    position: relative;
+    @include setFont( $sz:25px , $ls:0.04em , $lh:1.56 );
+    span {
+      @include setFont( $sz:18px , $ls:0.04em , $lh:2 );
+    }
+    &::after {
+      @include setLine( $ht:1px , $wh:254px , $bc:#CBCBCB );
+      @include CENTERxYoko;
+      bottom: -20px;
+    }
+    @include mediaPC {
+      &::after {
+        @include setLine( $ht:1px , $wh:280px , $bc:#CBCBCB );
+
+      }
+    }
+  }
+
+  .address {
+    margin-bottom: 40px;
+    @include setFont( $sz:14px , $ls:0.04em , $lh:2 );
+    @include mediaPC {
+      height: 150px;
+    }
+
+  }
+}
+
+/*----------------------------------------------------
+uphos、volvo, CSR ページ 共通
+----------------------------------------------------*/
+.page_csr {
+  .intro_content_area .tit span { background-color: #FF7BBD; }
+  .intro_content_area .sub { color: #FF7BBD; }
+}
+.page_Upohs {
+  .intro_content_area .tit span { background-color: #50B0FA; }
+  .intro_content_area .sub { color: #50B0FA; }
+  .shop_tit { color: #50B0FA; }
+}
+.page_volvo {
+  .intro_content_area .tit span { background-color: #0076DB; }
+  .intro_content_area .sub { color: #0076DB; }
+  .shop_tit { color: #0076DB; }
+}
+
+.page_marvelous {
+  .intro_content_area .tit span { background-color: #6C8CFC; }
+  .intro_content_area .sub { color: #6C8CFC; }
+  .shop_tit { color: #6C8CFC; }
+}
+
+
+.intro_content_area {
+  max-width: 940px;
+  margin: 0 auto 50px;
+  @include mediaPC {
+    margin: 50px auto 50px;
+  }
+  @include mediaMIDmin {
+    max-width: 1100px;
+  }
+
+  li {
+    background-color: #fff;
+    box-shadow: 0px 4px 5px #DDDDDD;
+    margin-bottom: 50px;
+    padding: 30px;
+    border-radius: 10px;
+    &:last-child {
+      margin-bottom: 0px;
+    }
+    @include mediaPC {
+      display: flex;
+      justify-content: space-between;
+
+      .thum {
+        width: 40.363%;
+      }
+      .text {
+        width: 50.909%;
+      }
+
+      &.img_right {
+        .thum { order: 2;}
+        .text { order: 1;}
+      }
+    }
+    @include mediaMIDmin {
+      .thum {
+        width: 400px;
+      }
+      .text {
+        width: 568px;
+      }
+    }
+  }
+
+  .tit {
+    span {
+      display: block;
+      border-radius: 20px;
+      padding: 5px 0;
+      margin: 25px 0;
+      color: white;
+      @include setFont( $sz:17px , $ls:0.02em , $lh:1.411 );
+    }
+    @include mediaPC {
+      margin: 0px 0 0px;
+      text-align: left;
+      span {
+        margin: 25px 0 15px;
+        display: inline-block;
+        @include setFont( $sz:18px , $ls:0.02em , $lh:1.411 );
+        padding: 5px 30px;
+      }
+    }
+  }
+
+  .sub {
+    margin: 0 0 25px;
+    text-align: left;
+    font-weight: bold;
+    @include setFont( $sz:21px , $ls:0.05em , $lh:1.809 );
+    @include mediaPC {
+      margin: 0 0 10px;
+      @include setFont( $sz:30px , $ls:0.110em , $lh:1.7 );
+    }
+  }
+
+  .message {
+    @include setFont( $sz:14px , $ls:0.04em , $lh:2 );
+    p {
+      text-align: left;
+    }
+    .btn_black {
+      margin-top: 25px;
+    }
+
+    @include mediaPC {
+      text-align: left;
+    }
+  }
+}
+
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.timeline {
+  /*線の起点とするためrelativeを設定*/
+  position: relative;
+list-style: none;
+padding:0 0 20px 0;
+}
+
+.border-line {
+position: absolute;
+top:0;
+height:0;/*はじめは高さを0に*/
+width: 300px;
+left: 50%;
+margin-left: -150px;
+z-index: -1;
+}
+
+
+
+/*----------------------------------------------------
+ENTRY エリア
+----------------------------------------------------*/
+
+.entry_area_btn_wrap {
+
+  @include mediaPC{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}
+
+
+.entry_area {
+  background: #000;
+  position: relative;
+  padding: 0 0 100px;
+  z-index: 0;
+  @include mediaSP{
+    padding: 0 30px 60px;
+  }
+  @include mediaPC{
+    border-bottom: 3px solid #fff;
+  }
+  &::before{
+    content: "";
+    position: absolute;
+    border-top: 22px solid #Fff;
+    border-right: 24px solid transparent;
+    border-bottom: 0px solid transparent;
+    border-left: 24px solid transparent;
+    left: 50%;
+    margin-left: -24px;
+  }
+}
+
+.entry_area_catch{
+  max-width: 574px;
+  margin: 0 auto;
+  padding: 80px 0 40px;
+}
+
+.entry_area_btn {
+  margin: 20px 0;
+  @include mediaSP{
+    width: 100%;
+  }
+}
+
+
+
+/*----------------------------------------------------
+改行
+----------------------------------------------------*/
+
+.brsp {
+  display: block;
+
+  @include mediaPC {
+    display: none;
+  }
+}
+
+.brpc {
+  display: none;
+
+  @include mediaPC {
+    display: block;
+  }
+}

@@ -1,0 +1,147 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+/*====================================================================
+slick
+====================================================================*/
+.slider_wrap {
+  margin-bottom: 100px;
+}
+
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  width: 94%;
+  margin: 0 auto;
+}
+.slider img {
+  width: 100%;
+  /*スライダー内の画像を横幅100%に*/
+  height: auto;
+}
+
+.slider_wrap {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .slider_wrap {
+    /* 親要素をサイズを超えて表示する */
+    width: 100vw;
+    margin: 0 calc(50% - 50vw) 100px;
+  }
+}
+
+/*slickのJSで書かれるタグ内、スライド左右の余白調整*/
+.slider .slick-slide {
+  margin: 0 10px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .slider .slick-slide {
+    -webkit-transform: scale(0.8);
+        -ms-transform: scale(0.8);
+            transform: scale(0.8);
+    /*左右の画像のサイズを80%に*/
+    -webkit-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    /*拡大や透過のアニメーションを0.5秒で行う*/
+  }
+  .slider .slick-slide.slick-center {
+    -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+            transform: scale(1);
+    /*中央の画像のサイズだけ等倍に*/
+    opacity: 1;
+    /*透過なし*/
+  }
+}
+
+/*矢印の設定*/
+/*戻る、次へ矢印の位置*/
+.slick-prev,
+.slick-next {
+  position: absolute;
+  /*絶対配置にする*/
+  top: 42%;
+  cursor: pointer;
+  /*マウスカーソルを指マークに*/
+  outline: none;
+  /*クリックをしたら出てくる枠線を消す*/
+  border-top: 2px solid #666;
+  /*矢印の色*/
+  border-right: 2px solid #666;
+  /*矢印の色*/
+  height: 15px;
+  width: 15px;
+}
+
+.slick-prev {
+  /*戻る矢印の位置と形状*/
+  left: -1.5%;
+  -webkit-transform: rotate(-135deg);
+      -ms-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+.slick-next {
+  /*次へ矢印の位置と形状*/
+  right: -1.5%;
+  -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.slick-prev::before,
+.slick-next::before {
+  font-size: 0;
+}
+
+/*ドットナビゲーションの設定*/
+.slick-dots {
+  text-align: center;
+  margin: 20px 0 0 0;
+}
+.slick-dots li {
+  display: inline-block;
+  margin: 0 5px;
+}
+.slick-dots button {
+  color: transparent;
+  outline: none;
+  width: 1px;
+  /*ドットボタンのサイズ*/
+  height: 1px;
+  /*ドットボタンのサイズ*/
+  display: block;
+  border-radius: 50%;
+  background: #fff;
+  /*ドットボタンの色*/
+}
+.slick-dots .slick-active button {
+  background: #ccc;
+  /*ドットボタンの現在地表示の色*/
+}
+/*# sourceMappingURL=slick_car.css.map */

@@ -1,0 +1,70 @@
+@charset 'utf-8';
+@import 'mixin';
+
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+
+.border-line {
+  background: linear-gradient(#50B0FA, #fff);
+}
+
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+.sec_tit {
+  margin-bottom: 50px;
+  h2 {
+    font-family: 'Rubik';
+    font-style: italic;
+    @include setFont( $sz:35px , $ls:0.04em , $lh:1.4 );
+    @include mediaPC {
+      @include setFont( $sz:60px , $ls:0.04em , $lh:1.25 );
+    }
+  }
+  .sub {
+    font-weight: bold;
+    @include setFont( $sz:14px , $ls:0.11em , $lh:2 );
+  }
+
+  @include mediaPC {
+    margin-bottom: 60px;
+  }
+}
+
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+
+.same_prev {
+  background-image: url(../images/service/samelink_volvo.jpg);
+  &::after{
+      background: #0076DB;
+  }
+}
+
+.same_next {
+  background-image: url(../images/service/samelink_insurance.jpg);
+  &::after{
+      background: #38B4AF;
+  }
+}
+
+.same_link{
+  a:hover{
+    .same_prev {
+        &::after{
+            background: #0037bc;
+        }
+    }
+    .same_next {
+        &::after{
+            background: #1979f5;
+        }
+    }
+  }
+}
+
+

@@ -1,0 +1,1736 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+/*----------------------------------------------------
+ローディング後のフェードイン
+----------------------------------------------------*/
+/*==スタート時は要素自体を透過0===*/
+.box {
+  opacity: 0;
+}
+
+/*==その場でフェードイン==*/
+.fade {
+  -webkit-animation-name: fadeAnime;
+          animation-name: fadeAnime;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeAnime {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/*==左からフェードイン==*/
+.fadeIn {
+  -webkit-animation-name: fadeInAnime;
+          animation-name: fadeInAnime;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-600px);
+            transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeInAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(-600px);
+            transform: translateX(-600px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*==右からフェードイン==*/
+.fadeInR {
+  -webkit-animation-name: fadeInRAnime;
+          animation-name: fadeInRAnime;
+  -webkit-animation-duration: 1.2s;
+          animation-duration: 1.2s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeInRAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(400px);
+            transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateX(400px);
+            transform: translateX(400px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+/*==下からフェードイン==*/
+.fadeUp {
+  -webkit-animation-name: fadeUpAnime;
+          animation-name: fadeUpAnime;
+  -webkit-animation-duration: 1.5s;
+          animation-duration: 1.5s;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  opacity: 0;
+}
+
+@-webkit-keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fadeUpAnime {
+  from {
+    opacity: 0;
+    -webkit-transform: translateY(100px);
+            transform: translateY(100px);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+/* アニメーションスタートの遅延時間を決めるCSS*/
+.delay-time01 {
+  -webkit-animation-delay: 1.9s;
+          animation-delay: 1.9s;
+}
+
+.delay-time02 {
+  -webkit-animation-delay: 2s;
+          animation-delay: 2s;
+}
+
+.delay-time03 {
+  -webkit-animation-delay: 2.1s;
+          animation-delay: 2.1s;
+}
+
+.delay-time04 {
+  -webkit-animation-delay: 2.2s;
+          animation-delay: 2.2s;
+}
+
+.delay-time05 {
+  -webkit-animation-delay: 4.2s;
+          animation-delay: 4.2s;
+}
+
+/*----------------------------------------------------
+siteHead  トップのみスクロール後にヘッダーに背景色付加
+----------------------------------------------------*/
+#siteHead {
+  background: none;
+  -webkit-backdrop-filter: unset;
+          backdrop-filter: unset;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+#siteHead.change_bg {
+  background: rgba(255, 255, 255, 0.7);
+  -webkit-backdrop-filter: blur(12px);
+          backdrop-filter: blur(12px);
+}
+
+.logo {
+  margin: 0 0 0 20px;
+  width: 146px;
+}
+
+/*==================================
+メインビジュアル
+===================================*/
+.mv {
+  max-width: 1266px;
+  margin: 0 auto;
+  padding: 80px 0 0;
+}
+
+/*----------------------------------------------------
+タイトルの文字
+----------------------------------------------------*/
+section h3 {
+  font-size: 85px;
+  padding: 10px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  section h3 {
+    font-size: 53px;
+  }
+}
+
+.motion-txt {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .motion-txt {
+    padding: 10px 60px;
+  }
+}
+
+.motion-txt:after {
+  content: "";
+  position: absolute;
+  opacity: 1;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 77%;
+  background-color: #000;
+  -webkit-transform: translate3d(-150%, 0, 0) skewX(-25deg);
+          transform: translate3d(-150%, 0, 0) skewX(-25deg);
+}
+
+.js-scroll.show .motion-txt:after {
+  -webkit-transition-property: opacity, -webkit-transform;
+  transition-property: opacity, -webkit-transform;
+  -o-transition-property: transform, opacity;
+  transition-property: transform, opacity;
+  transition-property: transform, opacity, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+       -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: translate3d(15%, 0, 0) skewX(-25deg);
+          transform: translate3d(15%, 0, 0) skewX(-25deg);
+}
+
+.js-scroll.done .motion-txt:after {
+  -webkit-transition-property: -webkit-transform;
+  transition-property: -webkit-transform;
+  -o-transition-property: transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transition-duration: 0.5s;
+       -o-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-delay: 0s;
+       -o-transition-delay: 0s;
+          transition-delay: 0s;
+  -webkit-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+       -o-transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+          transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+  -webkit-transform: translate3d(150%, 0, 0) skewX(-25deg);
+          transform: translate3d(150%, 0, 0) skewX(-25deg);
+}
+
+.motion-txt .motion-inner {
+  display: inline-block;
+  opacity: 0;
+  font-family: "Rubik";
+  font-style: italic;
+}
+
+.js-scroll.done .motion-txt .motion-inner {
+  opacity: 1;
+}
+
+/*==================================
+コンテンツエリア　斜めラインの領域
+===================================*/
+.top_contents_wrap {
+  overflow-x: hidden;
+  position: relative;
+}
+
+.top_contents {
+  background-image: url(../images/recruit/content_line_pc.png);
+  background-size: 140% 110%;
+  background-position-x: center;
+  background-position-y: -65px;
+  /* 750以下  */
+  /* 1501以上  */
+}
+@media all and (max-width: 750px) {
+  .top_contents {
+    background-image: url(../images/recruit/content_line_sp.png);
+    background-size: 270% 131.8%;
+    background-position-y: -93px;
+  }
+}
+@media all and (min-width: 1501px) {
+  .top_contents {
+    background-image: url(../images/recruit/content_line_pc.png);
+    background-size: 140% 110%;
+    background-position-x: center;
+    background-position-y: -45px;
+  }
+}
+
+/*==================================
+車のアイコン
+===================================*/
+.car_SP {
+  /* 751以上 */
+  position: absolute;
+}
+@media all and (min-width: 751px) {
+  .car_SP {
+    display: none;
+  }
+}
+
+.car_PC {
+  /* 750以下  */
+  position: absolute;
+}
+@media all and (max-width: 750px) {
+  .car_PC {
+    display: none;
+  }
+}
+
+/*=========車1===========*/
+.car_icon1 {
+  width: 140px;
+  margin: 0 auto;
+}
+.car_icon1 img {
+  /* 751以上  */
+  -webkit-transform: rotate(-7deg);
+      -ms-transform: rotate(-7deg);
+          transform: rotate(-7deg);
+  /* 750以下  */
+  /* 750以下  */
+  /* 650以上  */
+  /* 650以上  */
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (max-width: 750px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@media all and (min-width: 650px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(8deg);
+        -ms-transform: rotate(8deg);
+            transform: rotate(8deg);
+  }
+}
+@media all and (min-width: 760px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(-13deg);
+        -ms-transform: rotate(-13deg);
+            transform: rotate(-13deg);
+  }
+}
+@media all and (min-width: 801px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(-12deg);
+        -ms-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+}
+@media all and (min-width: 901px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+}
+@media all and (min-width: 1001px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(-4deg);
+        -ms-transform: rotate(-4deg);
+            transform: rotate(-4deg);
+  }
+}
+@media all and (min-width: 1201px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@media all and (min-width: 1301px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(1deg);
+        -ms-transform: rotate(1deg);
+            transform: rotate(1deg);
+  }
+}
+@media all and (min-width: 1501px) {
+  .car_icon1 img {
+    -webkit-transform: rotate(6deg);
+        -ms-transform: rotate(6deg);
+            transform: rotate(6deg);
+  }
+}
+
+.slideConts_car1 {
+  -webkit-transform: translate(100vw, -60px);
+      -ms-transform: translate(100vw, -60px);
+          transform: translate(100vw, -60px);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+  /* 760以上  */
+  /* 760以上  */
+  /*901以上  */
+  /* 901以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (min-width: 760px) {
+  .slideConts_car1 {
+    -webkit-transform: translate(100vw, -60px);
+        -ms-transform: translate(100vw, -60px);
+            transform: translate(100vw, -60px);
+  }
+}
+@media all and (min-width: 901px) {
+  .slideConts_car1 {
+    -webkit-transform: translate(100vw, -40px);
+        -ms-transform: translate(100vw, -40px);
+            transform: translate(100vw, -40px);
+  }
+}
+@media all and (min-width: 1201px) {
+  .slideConts_car1 {
+    -webkit-transform: translate(100vw, -40px);
+        -ms-transform: translate(100vw, -40px);
+            transform: translate(100vw, -40px);
+  }
+}
+@media all and (min-width: 1301px) {
+  .slideConts_car1 {
+    -webkit-transform: translate(100vw, -40px);
+        -ms-transform: translate(100vw, -40px);
+            transform: translate(100vw, -40px);
+  }
+}
+@media all and (min-width: 1501px) {
+  .slideConts_car1 {
+    -webkit-transform: translate(100vw, -20px);
+        -ms-transform: translate(100vw, -20px);
+            transform: translate(100vw, -20px);
+  }
+}
+.slideConts_car1.show {
+  -webkit-transform: translate(70vw, 100px) !important;
+      -ms-transform: translate(70vw, 100px) !important;
+          transform: translate(70vw, 100px) !important;
+  /* 760以上  */
+  /* 760以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (min-width: 760px) {
+  .slideConts_car1.show {
+    -webkit-transform: translate(78vw, 44px) !important;
+        -ms-transform: translate(78vw, 44px) !important;
+            transform: translate(78vw, 44px) !important;
+  }
+}
+@media all and (min-width: 901px) {
+  .slideConts_car1.show {
+    -webkit-transform: translate(70vw, 80px) !important;
+        -ms-transform: translate(70vw, 80px) !important;
+            transform: translate(70vw, 80px) !important;
+  }
+}
+@media all and (min-width: 1001px) {
+  .slideConts_car1.show {
+    -webkit-transform: translate(70vw, 80px) !important;
+        -ms-transform: translate(70vw, 80px) !important;
+            transform: translate(70vw, 80px) !important;
+  }
+}
+@media all and (min-width: 1201px) {
+  .slideConts_car1.show {
+    -webkit-transform: translate(70vw, 70px) !important;
+        -ms-transform: translate(70vw, 70px) !important;
+            transform: translate(70vw, 70px) !important;
+  }
+}
+@media all and (min-width: 1301px) {
+  .slideConts_car1.show {
+    -webkit-transform: translate(70vw, 80px) !important;
+        -ms-transform: translate(70vw, 80px) !important;
+            transform: translate(70vw, 80px) !important;
+  }
+}
+@media all and (min-width: 1501px) {
+  .slideConts_car1.show {
+    -webkit-transform: translate(66vw, 123px) !important;
+        -ms-transform: translate(66vw, 123px) !important;
+            transform: translate(66vw, 123px) !important;
+  }
+}
+
+.slideConts_car1sp {
+  /* 750以下  */
+  -webkit-transform: translate(100vw, -60px);
+      -ms-transform: translate(100vw, -60px);
+          transform: translate(100vw, -60px);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+  /* 650以上  */
+  /* 650以上  */
+}
+@media all and (min-width: 650px) {
+  .slideConts_car1sp {
+    -webkit-transform: translate(100vw, -37px);
+        -ms-transform: translate(100vw, -37px);
+            transform: translate(100vw, -37px);
+  }
+}
+.slideConts_car1sp.show {
+  -webkit-transform: translate(116px, 44px) !important;
+      -ms-transform: translate(116px, 44px) !important;
+          transform: translate(116px, 44px) !important;
+  /* 650以上  */
+  /* 650以上  */
+}
+@media all and (min-width: 650px) {
+  .slideConts_car1sp.show {
+    -webkit-transform: translate(50vw, 44px) !important;
+        -ms-transform: translate(50vw, 44px) !important;
+            transform: translate(50vw, 44px) !important;
+  }
+}
+
+/*=========車2===========*/
+.car_icon2 {
+  width: 140px;
+  margin: 0 auto;
+}
+.car_icon2 img {
+  -webkit-transform: rotate(9deg);
+      -ms-transform: rotate(9deg);
+          transform: rotate(9deg);
+  /* 750以下  */
+  /* 650以上  */
+  /* 650以上  */
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (max-width: 750px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(-35deg);
+        -ms-transform: rotate(-35deg);
+            transform: rotate(-35deg);
+  }
+}
+@media all and (min-width: 650px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(-3deg);
+        -ms-transform: rotate(-3deg);
+            transform: rotate(-3deg);
+  }
+}
+@media all and (min-width: 760px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(18deg);
+        -ms-transform: rotate(18deg);
+            transform: rotate(18deg);
+  }
+}
+@media all and (min-width: 801px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(12deg);
+        -ms-transform: rotate(12deg);
+            transform: rotate(12deg);
+  }
+}
+@media all and (min-width: 901px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(5deg);
+        -ms-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+@media all and (min-width: 1001px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(5deg);
+        -ms-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+@media all and (min-width: 1201px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@media all and (min-width: 1301px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+}
+@media all and (min-width: 1501px) {
+  .car_icon2 img {
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+
+.slideConts_car2 {
+  -webkit-transform: translate(100vw, 900px);
+      -ms-transform: translate(100vw, 900px);
+          transform: translate(100vw, 900px);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (min-width: 760px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 1100px);
+        -ms-transform: translate(100vw, 1100px);
+            transform: translate(100vw, 1100px);
+  }
+}
+@media all and (min-width: 801px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 1130px);
+        -ms-transform: translate(100vw, 1130px);
+            transform: translate(100vw, 1130px);
+  }
+}
+@media all and (min-width: 901px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 930px);
+        -ms-transform: translate(100vw, 930px);
+            transform: translate(100vw, 930px);
+  }
+}
+@media all and (min-width: 1001px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 930px);
+        -ms-transform: translate(100vw, 930px);
+            transform: translate(100vw, 930px);
+  }
+}
+@media all and (min-width: 1201px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 900px);
+        -ms-transform: translate(100vw, 900px);
+            transform: translate(100vw, 900px);
+  }
+}
+@media all and (min-width: 1301px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 900px);
+        -ms-transform: translate(100vw, 900px);
+            transform: translate(100vw, 900px);
+  }
+}
+@media all and (min-width: 1501px) {
+  .slideConts_car2 {
+    -webkit-transform: translate(100vw, 930px);
+        -ms-transform: translate(100vw, 930px);
+            transform: translate(100vw, 930px);
+  }
+}
+.slideConts_car2.show {
+  -webkit-transform: translate(1vw, 470px) !important;
+      -ms-transform: translate(1vw, 470px) !important;
+          transform: translate(1vw, 470px) !important;
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (min-width: 760px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(6vw, 641px) !important;
+        -ms-transform: translate(6vw, 641px) !important;
+            transform: translate(6vw, 641px) !important;
+  }
+}
+@media all and (min-width: 801px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(10vw, 660px) !important;
+        -ms-transform: translate(10vw, 660px) !important;
+            transform: translate(10vw, 660px) !important;
+  }
+}
+@media all and (min-width: 901px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(10vw, 540px) !important;
+        -ms-transform: translate(10vw, 540px) !important;
+            transform: translate(10vw, 540px) !important;
+  }
+}
+@media all and (min-width: 1001px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(10vw, 540px) !important;
+        -ms-transform: translate(10vw, 540px) !important;
+            transform: translate(10vw, 540px) !important;
+  }
+}
+@media all and (min-width: 1201px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(10vw, 510px) !important;
+        -ms-transform: translate(10vw, 510px) !important;
+            transform: translate(10vw, 510px) !important;
+  }
+}
+@media all and (min-width: 1301px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(10vw, 510px) !important;
+        -ms-transform: translate(10vw, 510px) !important;
+            transform: translate(10vw, 510px) !important;
+  }
+}
+@media all and (min-width: 1501px) {
+  .slideConts_car2.show {
+    -webkit-transform: translate(10vw, 540px) !important;
+        -ms-transform: translate(10vw, 540px) !important;
+            transform: translate(10vw, 540px) !important;
+  }
+}
+
+.slideConts_car2sp {
+  /* 750以下  */
+  -webkit-transform: translate(100vw, 540px);
+      -ms-transform: translate(100vw, 540px);
+          transform: translate(100vw, 540px);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+  /* 650以上  */
+  /* 650以上  */
+}
+@media all and (min-width: 650px) {
+  .slideConts_car2sp {
+    -webkit-transform: translate(100vw, 460px);
+        -ms-transform: translate(100vw, 460px);
+            transform: translate(100vw, 460px);
+  }
+}
+.slideConts_car2sp.show {
+  /* 750以下  */
+  -webkit-transform: translate(332px, 575px) !important;
+      -ms-transform: translate(332px, 575px) !important;
+          transform: translate(332px, 575px) !important;
+  /* 650以上  */
+  /* 650以上  */
+}
+@media all and (min-width: 650px) {
+  .slideConts_car2sp.show {
+    -webkit-transform: translate(6vw, 308px) !important;
+        -ms-transform: translate(6vw, 308px) !important;
+            transform: translate(6vw, 308px) !important;
+  }
+}
+
+/*=========車3===========*/
+.car_icon3 {
+  width: 140px;
+  margin: 0 auto;
+}
+.car_icon3 img {
+  -webkit-transform: rotate(-7deg);
+      -ms-transform: rotate(-7deg);
+          transform: rotate(-7deg);
+  /* 750以下  */
+  /* 750以下  */
+  /* 650以上  */
+  /* 650以上  */
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (max-width: 750px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(-1deg);
+        -ms-transform: rotate(-1deg);
+            transform: rotate(-1deg);
+  }
+}
+@media all and (min-width: 650px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(5deg);
+        -ms-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+@media all and (min-width: 760px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(-14deg);
+        -ms-transform: rotate(-14deg);
+            transform: rotate(-14deg);
+  }
+}
+@media all and (min-width: 801px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(-12deg);
+        -ms-transform: rotate(-12deg);
+            transform: rotate(-12deg);
+  }
+}
+@media all and (min-width: 901px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+@media all and (min-width: 1001px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+@media all and (min-width: 1201px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(-5deg);
+        -ms-transform: rotate(-5deg);
+            transform: rotate(-5deg);
+  }
+}
+@media all and (min-width: 1301px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(2deg);
+        -ms-transform: rotate(2deg);
+            transform: rotate(2deg);
+  }
+}
+@media all and (min-width: 1501px) {
+  .car_icon3 img {
+    -webkit-transform: rotate(5deg);
+        -ms-transform: rotate(5deg);
+            transform: rotate(5deg);
+  }
+}
+
+.slideConts_car3 {
+  /* 750以下*/
+  -webkit-transform: translate(100vw, 900px);
+      -ms-transform: translate(100vw, 900px);
+          transform: translate(100vw, 900px);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (min-width: 760px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 1100px);
+        -ms-transform: translate(100vw, 1100px);
+            transform: translate(100vw, 1100px);
+  }
+}
+@media all and (min-width: 801px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 1120px);
+        -ms-transform: translate(100vw, 1120px);
+            transform: translate(100vw, 1120px);
+  }
+}
+@media all and (min-width: 901px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 930px);
+        -ms-transform: translate(100vw, 930px);
+            transform: translate(100vw, 930px);
+  }
+}
+@media all and (min-width: 1001px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 930px);
+        -ms-transform: translate(100vw, 930px);
+            transform: translate(100vw, 930px);
+  }
+}
+@media all and (min-width: 1201px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 900px);
+        -ms-transform: translate(100vw, 900px);
+            transform: translate(100vw, 900px);
+  }
+}
+@media all and (min-width: 1301px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 900px);
+        -ms-transform: translate(100vw, 900px);
+            transform: translate(100vw, 900px);
+  }
+}
+@media all and (min-width: 1501px) {
+  .slideConts_car3 {
+    -webkit-transform: translate(100vw, 965px);
+        -ms-transform: translate(100vw, 965px);
+            transform: translate(100vw, 965px);
+  }
+}
+.slideConts_car3.show {
+  /* 751~1300  */
+  -webkit-transform: translate(370px, 1115px) !important;
+      -ms-transform: translate(370px, 1115px) !important;
+          transform: translate(370px, 1115px) !important;
+  /* 760以上  */
+  /* 760以上  */
+  /* 801以上  */
+  /* 801以上  */
+  /* 901以上  */
+  /* 901以上  */
+  /* 1001以上  */
+  /* 1001以上  */
+  /* 1201以上  */
+  /* 1201以上  */
+  /* 1301以上  */
+  /* 1301以上  */
+  /* 1501以上  */
+  /* 1501以上  */
+}
+@media all and (min-width: 760px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(7vw, 1560px) !important;
+        -ms-transform: translate(7vw, 1560px) !important;
+            transform: translate(7vw, 1560px) !important;
+  }
+}
+@media all and (min-width: 801px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(12vw, 1550px) !important;
+        -ms-transform: translate(12vw, 1550px) !important;
+            transform: translate(12vw, 1550px) !important;
+  }
+}
+@media all and (min-width: 901px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(12vw, 1330px) !important;
+        -ms-transform: translate(12vw, 1330px) !important;
+            transform: translate(12vw, 1330px) !important;
+  }
+}
+@media all and (min-width: 1001px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(12vw, 1330px) !important;
+        -ms-transform: translate(12vw, 1330px) !important;
+            transform: translate(12vw, 1330px) !important;
+  }
+}
+@media all and (min-width: 1201px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(60vw, 1070px) !important;
+        -ms-transform: translate(60vw, 1070px) !important;
+            transform: translate(60vw, 1070px) !important;
+  }
+}
+@media all and (min-width: 1301px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(60vw, 1070px) !important;
+        -ms-transform: translate(60vw, 1070px) !important;
+            transform: translate(60vw, 1070px) !important;
+  }
+}
+@media all and (min-width: 1501px) {
+  .slideConts_car3.show {
+    -webkit-transform: translate(60vw, 1140px) !important;
+        -ms-transform: translate(60vw, 1140px) !important;
+            transform: translate(60vw, 1140px) !important;
+  }
+}
+
+.slideConts_car3sp {
+  /* 750以下  */
+  -webkit-transform: translate(100vw, 1800px);
+      -ms-transform: translate(100vw, 1800px);
+          transform: translate(100vw, 1800px);
+  -webkit-transition: all 3s;
+  -o-transition: all 3s;
+  transition: all 3s;
+  /* 650以上  */
+  /* 650以上  */
+}
+@media all and (min-width: 650px) {
+  .slideConts_car3sp {
+    -webkit-transform: translate(100vw, 2020px);
+        -ms-transform: translate(100vw, 2020px);
+            transform: translate(100vw, 2020px);
+  }
+}
+.slideConts_car3sp.show {
+  /* 750以下  */
+  -webkit-transform: translate(130px, 1900px) !important;
+      -ms-transform: translate(130px, 1900px) !important;
+          transform: translate(130px, 1900px) !important;
+  /* 650以上  */
+  /* 650以上  */
+}
+@media all and (min-width: 650px) {
+  .slideConts_car3sp.show {
+    -webkit-transform: translate(76vw, 2070px) !important;
+        -ms-transform: translate(76vw, 2070px) !important;
+            transform: translate(76vw, 2070px) !important;
+  }
+}
+
+/*==================================
+キャッチ
+===================================*/
+.recruit_catch {
+  padding: 150px 0 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .recruit_catch {
+    padding: 170px 0 60px;
+  }
+}
+.recruit_catch span {
+  display: block;
+  font-family: "Zen Kaku Gothic New";
+}
+.recruit_catch span.catch_1 {
+  letter-spacing: 16px;
+}
+.recruit_catch span.catch_2 {
+  letter-spacing: 0px;
+}
+.recruit_catch span.catch_3 {
+  letter-spacing: 16px;
+}
+
+.recruit_catch_sub {
+  line-height: 3;
+  font-size: 18px;
+}
+
+/*==================================
+DATA
+===================================*/
+.recruit_data {
+  margin: 80px 0;
+  padding: 0 30px;
+  height: 550px;
+  /* 900以下  */
+}
+@media all and (max-width: 900px) {
+  .recruit_data {
+    height: 1140px;
+  }
+}
+.recruit_data ul {
+  max-width: 1100px;
+  margin: 0 auto;
+  /* 1201以上  */
+  /* 901以上  */
+  /* 751以上 */
+}
+@media all and (min-width: 1201px) {
+  .recruit_data ul {
+    width: 1100px;
+  }
+}
+@media all and (min-width: 901px) {
+  .recruit_data ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+}
+@media all and (min-width: 751px) {
+  .recruit_data ul {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+}
+.recruit_data li {
+  background: #fff;
+  border: 1px solid #000;
+  border-radius: 10px;
+  -webkit-box-shadow: 1px 1px 10px #ccc;
+          box-shadow: 1px 1px 10px #ccc;
+  margin: 0 10px;
+  /* 1201以上  */
+  /* 1200以下  */
+  /* 750以下  */
+}
+@media all and (min-width: 1201px) {
+  .recruit_data li {
+    width: 24%;
+    padding: 40px;
+  }
+}
+@media all and (max-width: 1200px) {
+  .recruit_data li {
+    margin: 20px 10px;
+    padding: 40px 30px;
+  }
+}
+@media all and (max-width: 750px) {
+  .recruit_data li {
+    margin: 20px 0px;
+  }
+}
+
+.recruit_catch_sub {
+  line-height: 3;
+  font-size: 18px;
+  /* 1200以下  */
+  /* 1201以上  */
+}
+@media all and (max-width: 1200px) {
+  .recruit_catch_sub {
+    margin: 0 auto;
+  }
+}
+@media all and (min-width: 1201px) {
+  .recruit_catch_sub br.only_sp {
+    display: none;
+  }
+}
+
+.data_tag {
+  background: #109552;
+  color: #fff;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0px auto;
+  padding: 1px 15px;
+  border-radius: 20px;
+}
+
+.data_q {
+  margin: 10px;
+}
+
+.data_tit {
+  font-size: 30px;
+  font-weight: bold;
+  margin: 10px 0 30px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .data_tit {
+    letter-spacing: 1px;
+  }
+}
+
+/*==================================
+Story
+===================================*/
+.story_catch {
+  margin: 0px 0 100px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .story_catch {
+    margin: 0px auto 100px;
+    max-width: 255px;
+  }
+}
+
+.story_catch1 {
+  /* 751以上 */
+  margin: 0px auto 30px;
+}
+@media all and (min-width: 751px) {
+  .story_catch1 {
+    width: 263px;
+  }
+}
+
+.story_catch2 {
+  max-width: 615px;
+  margin: 0 auto;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .story_catch2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.story_catch2_l {
+  background: #000;
+  border-radius: 5px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .story_catch2_l {
+    margin: 0 0 10px;
+  }
+}
+
+.story_catch2_r {
+  margin: 0 0 0 10px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .story_catch2_r {
+    margin: 0;
+  }
+}
+
+/*==================================
+共通部分
+===================================*/
+.top_content_wrap {
+  max-width: 1140px;
+  padding: 180px 20px;
+  margin: 0 auto;
+}
+.top_content_wrap.story {
+  padding: 0px 20px;
+}
+
+.top_content_tit {
+  font-size: 85px;
+  font-family: "" Zen Kaku Gothic New "";
+  z-index: 1;
+  position: relative;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-align: center;
+  margin: 0 auto;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .top_content_tit {
+    font-size: 60px;
+  }
+}
+.top_content_tit.about {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .top_content_tit.about {
+    margin: 0;
+  }
+}
+.top_content_tit.service {
+  position: relative;
+}
+.top_content_tit span.sub {
+  font-size: 14px;
+  display: block;
+  font-family: "Zen Kaku Gothic New";
+  font-weight: 900;
+}
+
+a .btn_check {
+  font-size: 16px;
+  color: #fff;
+  background: #000000;
+  border-radius: 5px;
+  position: relative;
+  width: 210px;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border: 1px solid #000;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 750以下  */
+}
+a .btn_check::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 6px solid #fff;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: 20px;
+  top: 20px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media all and (max-width: 750px) {
+  a .btn_check {
+    width: 100%;
+  }
+}
+a:hover .btn_check {
+  background: #fff;
+  color: #000;
+}
+a:hover .btn_check::after {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  border-left: 6px solid #000;
+  border-top: 6px solid transparent;
+  border-bottom: 6px solid transparent;
+  right: 30px;
+}
+
+/*==================================
+RECRUITMENT
+===================================*/
+.top_content_wrap.rec {
+  padding: 140px 0px;
+  /* 750以下  */
+  /* 751以上 */
+}
+@media all and (max-width: 750px) {
+  .top_content_wrap.rec {
+    padding: 220px 30px 0;
+    margin: 0 0 120px;
+  }
+}
+@media all and (min-width: 751px) {
+  .top_content_wrap.rec br {
+    display: none;
+  }
+}
+
+.rec_list_tit {
+  text-align: left;
+  font-size: 25px;
+  font-weight: bold;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .rec_list_tit {
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+       text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .rec_list_tit br {
+    display: none;
+  }
+}
+
+.rec_category {
+  color: #fff;
+  text-align: left;
+}
+.rec_category span {
+  border-radius: 20px;
+  padding: 0px 10px;
+  font-size: 12px;
+  font-weight: bold;
+}
+.rec_category span.volvo {
+  background: #0076DB;
+}
+.rec_category span.upohs {
+  background: #50B0FA;
+}
+
+ul.category_wrap {
+  max-width: 740px;
+  margin: 0 auto;
+  height: 380px;
+  padding: 0 0 10px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  ul.category_wrap {
+    height: auto;
+  }
+}
+
+li.category_one {
+  border-bottom: 1px solid #CBCBCB;
+  position: relative;
+  padding: 20px 0;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  li.category_one {
+    padding: 30px 0;
+  }
+}
+li.category_one .rec_topic {
+  position: relative;
+}
+li.category_one .rec_topic a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+li.category_one .rec_topic::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/top/news_arr.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 60px;
+  height: 4px;
+  right: -10px;
+  top: 50%;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  li.category_one .rec_topic::after {
+    background-image: url(../images/top/news_arr_sp.png);
+    width: 40px;
+    top: 30px;
+    right: 0px;
+    height: 10px;
+  }
+}
+li.category_one .rec_topic:hover::after {
+  right: 0px;
+}
+
+/*----------------------------------------------------
+左右からフェードイン
+----------------------------------------------------*/
+.slideContsL,
+.slideContsR,
+.slideContsBottom,
+.slideContsHead {
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  opacity: 0;
+}
+.slideContsL.show,
+.slideContsR.show,
+.slideContsBottom.show,
+.slideContsHead.show {
+  opacity: 1;
+}
+
+.slideContsL {
+  -webkit-transform: translate(-400px, 0);
+      -ms-transform: translate(-400px, 0);
+          transform: translate(-400px, 0);
+}
+
+.slideContsR {
+  -webkit-transform: translate(400px, 0);
+      -ms-transform: translate(400px, 0);
+          transform: translate(400px, 0);
+}
+
+.slideContsBottom {
+  -webkit-transform: translate(0px, 100px);
+      -ms-transform: translate(0px, 100px);
+          transform: translate(0px, 100px);
+}
+
+.slideContsHead {
+  -webkit-transform: translate(0px, -70px);
+      -ms-transform: translate(0px, -70px);
+          transform: translate(0px, -70px);
+}
+
+.slideContsL.show {
+  -webkit-transform: translate(0, 0) !important;
+      -ms-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
+
+.slideContsR.show {
+  -webkit-transform: translate(0, 0) !important;
+      -ms-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
+
+.slideContsBottom.show {
+  -webkit-transform: translate(0, 0) !important;
+      -ms-transform: translate(0, 0) !important;
+          transform: translate(0, 0) !important;
+}
+
+.slideContsHead.show {
+  -webkit-transform: translate(0, 0px) !important;
+      -ms-transform: translate(0, 0px) !important;
+          transform: translate(0, 0px) !important;
+}
+
+/*====================================================================
+slick
+====================================================================*/
+.slider {
+  /*横幅94%で左右に余白を持たせて中央寄せ*/
+  margin: 0 auto;
+  position: relative;
+  /*戻る、次へ矢印の位置*/
+}
+.slider img {
+  width: 100%;
+  /*スライダー内の画像を横幅100%に*/
+  height: auto;
+}
+.slider .slick-prev,
+.slider .slick-next {
+  -webkit-transform: none;
+      -ms-transform: none;
+          transform: none;
+  position: absolute;
+  position: absolute;
+  bottom: -100px;
+  top: unset;
+  width: 65px;
+  height: 65px;
+}
+.slider .slick-prev {
+  left: calc(50% - 75px);
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .slider .slick-prev {
+    left: calc(50% - 110px);
+  }
+}
+.slider .slick-next {
+  right: calc(50% - 75px);
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .slider .slick-next {
+    right: calc(50% - 35px);
+  }
+}
+.slider .slick-next:before,
+.slider .slick-prev:before {
+  content: "";
+}
+.slider .slick-prev_inner,
+.slider .slick-next_inner {
+  position: relative;
+}
+.slider .slick-prev_inner::before,
+.slider .slick-next_inner::before {
+  position: absolute;
+  content: "";
+  background-size: contain;
+  width: 65px;
+  height: 65px;
+}
+.slider .slick-prev_inner::before {
+  background-image: url(../images/recruit/slick_prev.png);
+}
+.slider .slick-next_inner::before {
+  background-image: url(../images/recruit/slick_next.png);
+}
+.slider .slick-list {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .slider .slick-list {
+    margin-left: calc((100vw - 1140px) / 2);
+  }
+}
+
+.slick img, .slick-center img {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.slick img:hover, .slick-center img:hover {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+
+.entry_area {
+  border-bottom: 3px solid #fff;
+}
+/*# sourceMappingURL=recruit.css.map */

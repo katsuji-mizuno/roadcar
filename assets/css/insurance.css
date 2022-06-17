@@ -1,0 +1,187 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+.border-line {
+  background: -webkit-gradient(linear, left top, left bottom, from(#38B4AF), to(#fff));
+  background: -o-linear-gradient(#38B4AF, #fff);
+  background: linear-gradient(#38B4AF, #fff);
+}
+
+/*----------------------------------------------------
+Insuranceのコンテンツエリア
+----------------------------------------------------*/
+.insu_content_area {
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.insu_content_area ul {
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .insu_content_area ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+.insu_content_area li {
+  background: #fff;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 5px 10px #ccc;
+  box-shadow: 0 5px 10px #ccc;
+  margin: 0 0 40px;
+  padding: 0 0 25px;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .insu_content_area li {
+    width: 48%;
+  }
+}
+.insu_content_area .btn_black {
+  margin: 40px 0 0;
+}
+
+.insu_text {
+  padding: 20px 60px;
+  height: 240px;
+  /* 750以下  */
+}
+@media all and (max-width: 750px) {
+  .insu_text {
+    padding: 20px;
+  }
+}
+
+.insu_tit {
+  color: #38B4AF;
+  font-size: 25px;
+  margin: 20px 0;
+  border-bottom: 1px solid #CBCBCB;
+  padding: 0 0 20px;
+}
+.insu_tit span {
+  display: block;
+  font-size: 14px;
+  margin: 0 0 10px;
+}
+
+.insu_message {
+  text-align: left;
+}
+
+/*----------------------------------------------------
+黒いボタン
+----------------------------------------------------*/
+a .btn_check {
+  margin: 50px;
+  font-size: 16px;
+  color: #fff;
+  background: #000000;
+  padding: 10px 60px;
+  border-radius: 5px;
+  position: relative;
+  margin: 40px 20px 20px;
+  /* 751以上 */
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+@media all and (min-width: 751px) {
+  a .btn_check {
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    margin: 40px auto 20px;
+  }
+}
+a .btn_check::after {
+  content: "";
+  position: absolute;
+  background-image: url(../images/icon_check.png);
+  width: 11px;
+  height: 11px;
+  right: 20px;
+  top: 50%;
+  margin-top: -5px;
+  background-size: contain;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a:hover .btn_check {
+  background: #333333;
+}
+a:hover .btn_check::after {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.insu_thum img {
+  border-radius: 10px 10px 0px 0px;
+}
+
+/* 750以下  */
+@media all and (max-width: 750px) {
+  .btn_black {
+    display: inline-block;
+    width: 255px;
+  }
+}
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+.same_prev {
+  background-image: url(../images/service/samelink_volvo.jpg);
+}
+.same_prev::after {
+  background: #0076DB;
+}
+
+.same_next {
+  background-image: url(../images/service/samelink_upohs.jpg);
+}
+.same_next::after {
+  background: #50B0FA;
+}
+
+.same_link a:hover .same_prev::after {
+  background: #0037bc;
+}
+.same_link a:hover .same_next::after {
+  background: #1979f5;
+}
+/*# sourceMappingURL=insurance.css.map */

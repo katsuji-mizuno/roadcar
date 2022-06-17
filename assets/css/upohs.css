@@ -1,0 +1,93 @@
+@charset "UTF-8";
+/***********************共通設定************************/
+/*----------------------------------------------------
+メディア
+----------------------------------------------------*/
+/*----------------------------------------------------
+フォント設定
+----------------------------------------------------*/
+/*----------------------------------------------------
+中央寄せ
+----------------------------------------------------*/
+/* 上下左右中央寄せ */
+/* 上下中央寄せ */
+/* 左右中央寄せ */
+/*----------------------------------------------------
+擬似要素
+----------------------------------------------------*/
+/*----------------------------------------------------
+ボタン
+
+基本のhtml
+<a href="" class="btn">
+  <span>私たちについて</span>
+</a>
+----------------------------------------------------*/
+/* 初期：bg塗りあり、枠線塗りあり ⇨ hoverで反転 */
+/*----------------------------------------------------
+縦のライン
+----------------------------------------------------*/
+.border-line {
+  background: -webkit-gradient(linear, left top, left bottom, from(#50B0FA), to(#fff));
+  background: -o-linear-gradient(#50B0FA, #fff);
+  background: linear-gradient(#50B0FA, #fff);
+}
+
+/*----------------------------------------------------
+セクションタイトル
+----------------------------------------------------*/
+.sec_tit {
+  margin-bottom: 50px;
+  /* 751以上 */
+}
+.sec_tit h2 {
+  font-family: "Rubik";
+  font-style: italic;
+  font-size: 35px;
+  letter-spacing: 0.04em;
+  line-height: 1.4;
+  /* 751以上 */
+}
+@media all and (min-width: 751px) {
+  .sec_tit h2 {
+    font-size: 60px;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+  }
+}
+.sec_tit .sub {
+  font-weight: bold;
+  font-size: 14px;
+  letter-spacing: 0.11em;
+  line-height: 2;
+}
+@media all and (min-width: 751px) {
+  .sec_tit {
+    margin-bottom: 60px;
+  }
+}
+
+/*----------------------------------------------------
+同階層のリンク
+----------------------------------------------------*/
+.same_prev {
+  background-image: url(../images/service/samelink_volvo.jpg);
+}
+.same_prev::after {
+  background: #0076DB;
+}
+
+.same_next {
+  background-image: url(../images/service/samelink_insurance.jpg);
+}
+.same_next::after {
+  background: #38B4AF;
+}
+
+.same_link a:hover .same_prev::after {
+  background: #0037bc;
+}
+.same_link a:hover .same_next::after {
+  background: #1979f5;
+}
+/*# sourceMappingURL=upohs.css.map */
